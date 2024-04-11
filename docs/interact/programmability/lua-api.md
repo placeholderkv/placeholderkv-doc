@@ -87,7 +87,6 @@ Its description follows [below](#redis_object).
 
 ### <a name="the-keys-global-variable"></a>The _KEYS_ global variable
 
-* Since version: 2.6.0
 * Available in scripts: yes
 * Available in functions: no
 
@@ -101,7 +100,6 @@ It is pre-populated with all key name input arguments.
 
 ### <a name="the-argv-global-variable"></a>The _ARGV_ global variable
 
-* Since version: 2.6.0
 * Available in scripts: yes
 * Available in functions: no
 
@@ -110,7 +108,6 @@ It is pre-populated with all regular input arguments.
 
 ## <a name="redis_object"></a>_redis_ object
 
-* Since version: 2.6.0
 * Available in scripts: yes
 * Available in functions: yes
 
@@ -120,7 +117,6 @@ Following is the API provided by the _redis_ object instance.
 
 ### <a name="redis.call"></a> `redis.call(command [,arg...])`
 
-* Since version: 2.6.0
 * Available in scripts: yes
 * Available in functions: yes
 
@@ -147,7 +143,6 @@ To handle Redis runtime errors use `redis.pcall()` instead.
 
 ### <a name="redis.pcall"></a> `redis.pcall(command [,arg...])`
 
-* Since version: 2.6.0
 * Available in scripts: yes
 * Available in functions: yes
 
@@ -178,7 +173,6 @@ redis> EVAL "..." 0 hello world
 
 ### <a name="redis.error_reply"></a> `redis.error_reply(x)`
 
-* Since version: 2.6.0
 * Available in scripts: yes
 * Available in functions: yes
 
@@ -211,7 +205,6 @@ Scripts are advised to follow this convention, as shown in the example above, bu
 
 ### <a name="redis.status_reply"></a> `redis.status_reply(x)`
 
-* Since version: 2.6.0
 * Available in scripts: yes
 * Available in functions: yes
 
@@ -241,7 +234,6 @@ Refer to the [Data type conversion](#data-type-conversion) for returning other r
 
 ### <a name="redis.sha1hex"></a> `redis.sha1hex(x)`
 
-* Since version: 2.6.0
 * Available in scripts: yes
 * Available in functions: yes
 
@@ -256,7 +248,6 @@ redis> EVAL "return redis.sha1hex('')" 0
 
 ### <a name="redis.log"></a> `redis.log(level, message)`
 
-* Since version: 2.6.0
 * Available in scripts: yes
 * Available in functions: yes
 
@@ -288,7 +279,6 @@ will produce a line similar to the following in your server's log:
 
 ### <a name="redis.setresp"></a> `redis.setresp(x)`
 
-* Since version: 6.0.0
 * Available in scripts: yes
 * Available in functions: yes
 
@@ -306,16 +296,12 @@ Please refer to the [Data type conversion](#data-type-conversion) for more infor
 
 ### <a name="redis.set_repl"></a> `redis.set_repl(x)`
 
-* Since version: 3.2.0
 * Available in scripts: yes
 * Available in functions: no
 
 **Note:**
-this feature is only available when script effects replication is employed.
-Calling it when using verbatim script replication will result in an error.
-As of Redis version 2.6.0, scripts were replicated verbatim, meaning that the scripts' source code was sent for execution by replicas and stored in the AOF.
-An alternative replication mode added in version 3.2.0 allows replicating only the scripts' effects.
-As of Redis version 7.0, script replication is no longer supported, and the only replication mode available is script effects replication.
+this feature is only available when script effects replication is employed,
+the replication mode available is script effects replication, And no script replication is supported.
 
 **Warning:**
 this is an advanced feature. Misuse can cause damage by violating the contract that binds the Redis master, its replicas, and AOF contents to hold the same logical content.
@@ -361,8 +347,6 @@ If you run this script by calling `EVAL "..." 3 A B C 1 2 3`, the result will be
 
 ### <a name="redis.replicate_commands"></a> `redis.replicate_commands()`
 
-* Since version: 3.2.0
-* Until version: 7.0.0
 * Available in scripts: yes
 * Available in functions: no
 
@@ -376,7 +360,6 @@ For more information, please refer to [`Replicating commands instead of scripts`
 
 ### <a name="redis.breakpoint"></a>  `redis.breakpoint()`
 
-* Since version: 3.2.0
 * Available in scripts: yes
 * Available in functions: no
 
@@ -384,7 +367,6 @@ This function triggers a breakpoint when using the [Redis Lua debugger](/topics/
 
 ### <a name="redis.debug"></a> `redis.debug(x)`
 
-* Since version: 3.2.0
 * Available in scripts: yes
 * Available in functions: no
 
@@ -392,7 +374,6 @@ This function prints its argument in the [Redis Lua debugger](/topics/ldb) conso
 
 ### <a name="redis.acl_check_cmd"></a> `redis.acl_check_cmd(command [,arg...])`
 
-* Since version: 7.0.0
 * Available in scripts: yes
 * Available in functions: yes
 
@@ -404,7 +385,6 @@ The function will raise an error if the passed command or its arguments are inva
 
 ### <a name="redis.register_function"></a> `redis.register_function`
 
-* Since version: 7.0.0
 * Available in scripts: no
 * Available in functions: yes
 
@@ -504,7 +484,6 @@ Please refer to [Function Flags](/docs/manual/programmability/functions-intro/#f
 
 ### <a name="redis.redis_version"></a> `redis.REDIS_VERSION`
 
-* Since version: 7.0.0
 * Available in scripts: yes
 * Available in functions: yes
 
@@ -517,7 +496,6 @@ The reply's format is `MM.mm.PP`, where:
 
 ### <a name="redis.redis_version_num"></a> `redis.REDIS_VERSION_NUM`
 
-* Since version: 7.0.0
 * Available in scripts: yes
 * Available in functions: yes
 
@@ -656,9 +634,8 @@ That means, for example, that returning the RESP3 map type to a RESP2 connection
 ### Using `SELECT` inside scripts
 
 You can call the `SELECT` command from your Lua scripts, like you can with any normal client connection.
-However, one subtle aspect of the behavior changed between Redis versions 2.8.11 and 2.8.12.
-Prior to Redis version 2.8.12, the database selected by the Lua script was *set as the current database* for the client connection that had called it.
-As of Redis version 2.8.12, the database selected by the Lua script only affects the execution context of the script, and does not modify the database that's selected by the client calling the script.
+The database selected by the Lua script was *set as the current database* for the client connection that had called it.
+The database selected by the Lua script only affects the execution context of the script, and does not modify the database that's selected by the client calling the script.
 This semantic change between patch level releases was required since the old behavior was inherently incompatible with Redis' replication and introduced bugs.
 
 ## Runtime libraries
@@ -681,7 +658,6 @@ In addition, the following external libraries are loaded and accessible to scrip
 
 ### <a name="os-library"></a> _os_ library
 
-* Since version: 8.0.0
 * Available in scripts: yes
 * Available in functions: yes
 
@@ -693,7 +669,6 @@ Note that for sandbox security, currently only the following os functions is exp
 
 ### <a name="struct-library"></a> _struct_ library
 
-* Since version: 2.6.0
 * Available in scripts: yes
 * Available in functions: yes
 
@@ -767,7 +742,6 @@ redis> EVAL "return struct.size('HH')" 0
 
 ### <a name="cjson-library"></a> _cjson_ library
 
-* Since version: 2.6.0
 * Available in scripts: yes
 * Available in functions: yes
 
@@ -798,7 +772,6 @@ redis> EVAL "return cjson.decode(ARGV[1])['foo']" 0 '{"foo":"bar"}'
 
 ### <a name="cmsgpack-library"></a> _cmsgpack_ library
 
-* Since version: 2.6.0
 * Available in scripts: yes
 * Available in functions: yes
 
@@ -831,7 +804,6 @@ redis> EVAL "return cmsgpack.unpack(ARGV[1])" 0 "\x93\xa3foo\xa3bar\xa3baz"
 
 ### <a name="bitop-library"></a> _bit_ library
 
-* Since version: 2.8.18
 * Available in scripts: yes
 * Available in functions: yes
 

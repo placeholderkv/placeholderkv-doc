@@ -317,7 +317,7 @@ To enforce the deterministic behavior of scripts, Redis does the following:
 * Redis will block the script with an error if a script calls a Redis command able to alter the data set **after** a Redis _random_ command like `RANDOMKEY`, `SRANDMEMBER`, `TIME`.
   That means that read-only scripts that don't modify the dataset can call those commands.
   Note that a _random command_ does not necessarily mean a command that uses random numbers: any non-deterministic command is considered as a random command (the best example in this regard is the `TIME` command).
-* In Redis version 4.0, commands that may return elements in random order, such as `SMEMBERS` (because Redis Sets are _unordered_), exhibit a different behavior when called from Lua,
+* Commands that may return elements in random order, such as `SMEMBERS` (because Redis Sets are _unordered_), exhibit a different behavior when called from Lua,
 and undergo a silent lexicographical sorting filter before returning data to Lua scripts.
   So `redis.call("SMEMBERS",KEYS[1])` will always return the Set elements in the same order, while the same command invoked by normal clients may return different results even if the key contains exactly the same elements.
   However, starting with Redis 5.0, this ordering is no longer performed because replicating effects circumvents this type of non-determinism.

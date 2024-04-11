@@ -10,7 +10,6 @@ aliases:
 
 This document provides information about how Redis handles clients at the network layer level: connections, timeouts, buffers, and other similar topics are covered here.
 
-The information contained in this document is **only applicable to Redis version 2.6 or greater**.
 
 ## Accepting Client Connections
 

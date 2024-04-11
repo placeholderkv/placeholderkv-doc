@@ -41,7 +41,7 @@ Every applicative instance that runs a script must have the script's source code
 That is because scripts are only cached by the server and are volatile.
 As your application grows, this approach can become harder to develop and maintain.
 
-Secondly, added in v7.0, Redis Functions are essentially scripts that are first-class database elements.
+Secondly, Redis Functions are essentially scripts that are first-class database elements.
 As such, functions decouple scripting from application logic and enable independent development, testing, and deployment of scripts.
 To use functions, they need to be loaded first, and then they are available for use by all connected clients.
 In this case, loading a function to the database becomes an administrative deployment task (such as loading a Redis module, for example), which separates the script from the application.

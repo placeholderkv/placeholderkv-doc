@@ -78,9 +78,9 @@ latency that is better than the latency that every process running in your
 environment will experience because of the kernel or hypervisor implementation
 or setup.
 
-We call this kind of latency **intrinsic latency**, and `redis-cli` starting
-from Redis version 2.8.7 is able to measure it. This is an example run
-under Linux 3.11.0 running on an entry level server.
+We call this kind of latency **intrinsic latency**, and `redis-cli` is able 
+to measure it. This is an example run under Linux 3.11.0 running on an entry level 
+server.
 
 Note: the argument `100` is the number of seconds the test will be executed.
 The more time we run the test, the more likely we'll be able to spot

@@ -1,7 +1,6 @@
 {
     "ACL": {
         "summary": "A container for Access List Control commands.",
-        "since": "6.0.0",
         "group": "server",
         "complexity": "Depends on subcommand.",
         "acl_categories": [
@@ -11,7 +10,6 @@
     },
     "ACL CAT": {
         "summary": "Lists the ACL categories, or the commands inside a category.",
-        "since": "6.0.0",
         "group": "server",
         "complexity": "O(1) since the categories and commands are a fixed set.",
         "acl_categories": [
@@ -34,7 +32,6 @@
     },
     "ACL DELUSER": {
         "summary": "Deletes ACL users, and terminates their connections.",
-        "since": "6.0.0",
         "group": "server",
         "complexity": "O(1) amortized time considering the typical user.",
         "acl_categories": [
@@ -64,7 +61,6 @@
     },
     "ACL DRYRUN": {
         "summary": "Simulates the execution of a command by a user, without executing the command.",
-        "since": "7.0.0",
         "group": "server",
         "complexity": "O(1).",
         "acl_categories": [
@@ -101,7 +97,6 @@
     },
     "ACL GENPASS": {
         "summary": "Generates a pseudorandom, secure password that can be used to identify ACL users.",
-        "since": "6.0.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -124,19 +119,8 @@
     },
     "ACL GETUSER": {
         "summary": "Lists the ACL rules of a user.",
-        "since": "6.0.0",
         "group": "server",
         "complexity": "O(N). Where N is the number of password, command and pattern rules that the user has.",
-        "history": [
-            [
-                "6.2.0",
-                "Added Pub/Sub channel patterns."
-            ],
-            [
-                "7.0.0",
-                "Added selectors and changed the format of key and channel patterns from a list to their rule representation."
-            ]
-        ],
         "acl_categories": [
             "@admin",
             "@slow",
@@ -159,7 +143,6 @@
     },
     "ACL HELP": {
         "summary": "Returns helpful text about the different subcommands.",
-        "since": "6.0.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -173,7 +156,6 @@
     },
     "ACL LIST": {
         "summary": "Dumps the effective rules in ACL file format.",
-        "since": "6.0.0",
         "group": "server",
         "complexity": "O(N). Where N is the number of configured users.",
         "acl_categories": [
@@ -191,7 +173,6 @@
     },
     "ACL LOAD": {
         "summary": "Reloads the rules from the configured ACL file.",
-        "since": "6.0.0",
         "group": "server",
         "complexity": "O(N). Where N is the number of configured users.",
         "acl_categories": [
@@ -209,15 +190,8 @@
     },
     "ACL LOG": {
         "summary": "Lists recent security events generated due to ACL rules.",
-        "since": "6.0.0",
         "group": "server",
         "complexity": "O(N) with N being the number of entries shown.",
-        "history": [
-            [
-                "7.2.0",
-                "Added entry ID, timestamp created, and timestamp last updated."
-            ]
-        ],
         "acl_categories": [
             "@admin",
             "@slow",
@@ -253,7 +227,6 @@
     },
     "ACL SAVE": {
         "summary": "Saves the effective ACL rules in the configured ACL file.",
-        "since": "6.0.0",
         "group": "server",
         "complexity": "O(N). Where N is the number of configured users.",
         "acl_categories": [
@@ -275,19 +248,8 @@
     },
     "ACL SETUSER": {
         "summary": "Creates and modifies an ACL user and its rules.",
-        "since": "6.0.0",
         "group": "server",
         "complexity": "O(N). Where N is the number of rules provided.",
-        "history": [
-            [
-                "6.2.0",
-                "Added Pub/Sub channel patterns."
-            ],
-            [
-                "7.0.0",
-                "Added selectors and key based permissions."
-            ]
-        ],
         "acl_categories": [
             "@admin",
             "@slow",
@@ -321,7 +283,6 @@
     },
     "ACL USERS": {
         "summary": "Lists all ACL users.",
-        "since": "6.0.0",
         "group": "server",
         "complexity": "O(N). Where N is the number of configured users.",
         "acl_categories": [
@@ -339,7 +300,6 @@
     },
     "ACL WHOAMI": {
         "summary": "Returns the authenticated username of the current connection.",
-        "since": "6.0.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -354,7 +314,6 @@
     },
     "APPEND": {
         "summary": "Appends a string to the value of a key. Creates the key if it doesn't exist.",
-        "since": "2.0.0",
         "group": "string",
         "complexity": "O(1). The amortized time complexity is O(1) assuming the appended value is small and the already present value is of any size, since the dynamic string library used by Redis will double the free space available on every reallocation.",
         "acl_categories": [
@@ -404,7 +363,6 @@
     },
     "ASKING": {
         "summary": "Signals that a cluster client is following an -ASK redirect.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(1)",
         "acl_categories": [
@@ -418,15 +376,8 @@
     },
     "AUTH": {
         "summary": "Authenticates the connection.",
-        "since": "1.0.0",
         "group": "connection",
         "complexity": "O(N) where N is the number of passwords defined for the user",
-        "history": [
-            [
-                "6.0.0",
-                "Added ACL style (username and password)."
-            ]
-        ],
         "acl_categories": [
             "@fast",
             "@connection"
@@ -436,8 +387,7 @@
             {
                 "name": "username",
                 "type": "string",
-                "display_text": "username",
-                "since": "6.0.0",
+                "display_text": "username",,
                 "optional": true
             },
             {
@@ -457,7 +407,6 @@
     },
     "BGREWRITEAOF": {
         "summary": "Asynchronously rewrites the append-only file to disk.",
-        "since": "1.0.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -474,15 +423,8 @@
     },
     "BGSAVE": {
         "summary": "Asynchronously saves the database(s) to disk.",
-        "since": "1.0.0",
         "group": "server",
         "complexity": "O(1)",
-        "history": [
-            [
-                "3.2.2",
-                "Added the `SCHEDULE` option."
-            ]
-        ],
         "acl_categories": [
             "@admin",
             "@slow",
@@ -495,7 +437,6 @@
                 "type": "pure-token",
                 "display_text": "schedule",
                 "token": "SCHEDULE",
-                "since": "3.2.2",
                 "optional": true
             }
         ],
@@ -507,15 +448,8 @@
     },
     "BITCOUNT": {
         "summary": "Counts the number of set bits (population counting) in a string.",
-        "since": "2.6.0",
         "group": "bitmap",
         "complexity": "O(N)",
-        "history": [
-            [
-                "7.0.0",
-                "Added the `BYTE|BIT` option."
-            ]
-        ],
         "acl_categories": [
             "@read",
             "@bitmap",
@@ -567,7 +501,6 @@
                     {
                         "name": "unit",
                         "type": "oneof",
-                        "since": "7.0.0",
                         "optional": true,
                         "arguments": [
                             {
@@ -593,7 +526,6 @@
     },
     "BITFIELD": {
         "summary": "Performs arbitrary bitfield integer operations on strings.",
-        "since": "3.2.0",
         "group": "bitmap",
         "complexity": "O(1) for each subcommand specified",
         "acl_categories": [
@@ -747,7 +679,6 @@
     },
     "BITFIELD_RO": {
         "summary": "Performs arbitrary read-only bitfield integer operations on strings.",
-        "since": "6.0.0",
         "group": "bitmap",
         "complexity": "O(1) for each subcommand specified",
         "acl_categories": [
@@ -811,7 +742,6 @@
     },
     "BITOP": {
         "summary": "Performs bitwise operations on multiple strings, and stores the result.",
-        "since": "2.6.0",
         "group": "bitmap",
         "complexity": "O(N)",
         "acl_categories": [
@@ -910,15 +840,8 @@
     },
     "BITPOS": {
         "summary": "Finds the first set (1) or clear (0) bit in a string.",
-        "since": "2.8.7",
         "group": "bitmap",
         "complexity": "O(N)",
-        "history": [
-            [
-                "7.0.0",
-                "Added the `BYTE|BIT` option."
-            ]
-        ],
         "acl_categories": [
             "@read",
             "@bitmap",
@@ -980,7 +903,6 @@
                             {
                                 "name": "unit",
                                 "type": "oneof",
-                                "since": "7.0.0",
                                 "optional": true,
                                 "arguments": [
                                     {
@@ -1008,7 +930,6 @@
     },
     "BLMOVE": {
         "summary": "Pops an element from a list, pushes it to another list and returns it. Blocks until an element is available otherwise. Deletes the list if the last element was moved.",
-        "since": "6.2.0",
         "group": "list",
         "complexity": "O(1)",
         "acl_categories": [
@@ -1120,7 +1041,6 @@
     },
     "BLMPOP": {
         "summary": "Pops the first element from one of multiple lists. Blocks until an element is available otherwise. Deletes the list if the last element was popped.",
-        "since": "7.0.0",
         "group": "list",
         "complexity": "O(N+M) where N is the number of provided keys and M is the number of elements returned.",
         "acl_categories": [
@@ -1203,15 +1123,8 @@
     },
     "BLPOP": {
         "summary": "Removes and returns the first element in a list. Blocks until an element is available otherwise. Deletes the list if the last element was popped.",
-        "since": "2.0.0",
         "group": "list",
         "complexity": "O(N) where N is the number of provided keys.",
-        "history": [
-            [
-                "6.0.0",
-                "`timeout` is interpreted as a double instead of an integer."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@list",
@@ -1261,15 +1174,8 @@
     },
     "BRPOP": {
         "summary": "Removes and returns the last element in a list. Blocks until an element is available otherwise. Deletes the list if the last element was popped.",
-        "since": "2.0.0",
         "group": "list",
         "complexity": "O(N) where N is the number of provided keys.",
-        "history": [
-            [
-                "6.0.0",
-                "`timeout` is interpreted as a double instead of an integer."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@list",
@@ -1319,17 +1225,9 @@
     },
     "BRPOPLPUSH": {
         "summary": "Pops an element from a list, pushes it to another list and returns it. Block until an element is available otherwise. Deletes the list if the last element was popped.",
-        "since": "2.2.0",
         "group": "list",
         "complexity": "O(1)",
-        "deprecated_since": "6.2.0",
         "replaced_by": "`BLMOVE` with the `RIGHT` and `LEFT` arguments",
-        "history": [
-            [
-                "6.0.0",
-                "`timeout` is interpreted as a double instead of an integer."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@list",
@@ -1406,7 +1304,6 @@
     },
     "BZMPOP": {
         "summary": "Removes and returns a member by score from one or more sorted sets. Blocks until a member is available otherwise. Deletes the sorted set if the last element was popped.",
-        "since": "7.0.0",
         "group": "sorted-set",
         "complexity": "O(K) + O(M*log(N)) where K is the number of provided keys, N being the number of elements in the sorted set, and M being the number of elements popped.",
         "acl_categories": [
@@ -1489,15 +1386,8 @@
     },
     "BZPOPMAX": {
         "summary": "Removes and returns the member with the highest score from one or more sorted sets. Blocks until a member available otherwise.  Deletes the sorted set if the last element was popped.",
-        "since": "5.0.0",
         "group": "sorted-set",
         "complexity": "O(log(N)) with N being the number of elements in the sorted set.",
-        "history": [
-            [
-                "6.0.0",
-                "`timeout` is interpreted as a double instead of an integer."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@sortedset",
@@ -1548,15 +1438,8 @@
     },
     "BZPOPMIN": {
         "summary": "Removes and returns the member with the lowest score from one or more sorted sets. Blocks until a member is available otherwise. Deletes the sorted set if the last element was popped.",
-        "since": "5.0.0",
         "group": "sorted-set",
         "complexity": "O(log(N)) with N being the number of elements in the sorted set.",
-        "history": [
-            [
-                "6.0.0",
-                "`timeout` is interpreted as a double instead of an integer."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@sortedset",
@@ -1607,7 +1490,6 @@
     },
     "CLIENT": {
         "summary": "A container for client connection commands.",
-        "since": "2.4.0",
         "group": "connection",
         "complexity": "Depends on subcommand.",
         "acl_categories": [
@@ -1617,7 +1499,6 @@
     },
     "CLIENT CACHING": {
         "summary": "Instructs the server whether to track the keys in the next request.",
-        "since": "6.0.0",
         "group": "connection",
         "complexity": "O(1)",
         "acl_categories": [
@@ -1653,7 +1534,6 @@
     },
     "CLIENT GETNAME": {
         "summary": "Returns the name of the connection.",
-        "since": "2.6.9",
         "group": "connection",
         "complexity": "O(1)",
         "acl_categories": [
@@ -1669,7 +1549,6 @@
     },
     "CLIENT GETREDIR": {
         "summary": "Returns the client ID to which the connection's tracking notifications are redirected.",
-        "since": "6.0.0",
         "group": "connection",
         "complexity": "O(1)",
         "acl_categories": [
@@ -1685,7 +1564,6 @@
     },
     "CLIENT HELP": {
         "summary": "Returns helpful text about the different subcommands.",
-        "since": "5.0.0",
         "group": "connection",
         "complexity": "O(1)",
         "acl_categories": [
@@ -1700,7 +1578,6 @@
     },
     "CLIENT ID": {
         "summary": "Returns the unique client ID of the connection.",
-        "since": "5.0.0",
         "group": "connection",
         "complexity": "O(1)",
         "acl_categories": [
@@ -1716,7 +1593,6 @@
     },
     "CLIENT INFO": {
         "summary": "Returns information about the connection.",
-        "since": "6.2.0",
         "group": "connection",
         "complexity": "O(1)",
         "acl_categories": [
@@ -1735,31 +1611,8 @@
     },
     "CLIENT KILL": {
         "summary": "Terminates open connections.",
-        "since": "2.4.0",
         "group": "connection",
         "complexity": "O(N) where N is the number of client connections",
-        "history": [
-            [
-                "2.8.12",
-                "Added new filter format."
-            ],
-            [
-                "2.8.12",
-                "`ID` option."
-            ],
-            [
-                "3.2.0",
-                "Added `master` type in for `TYPE` option."
-            ],
-            [
-                "5.0.0",
-                "Replaced `slave` `TYPE` with `replica`. `slave` still supported for backward compatibility."
-            ],
-            [
-                "6.2.0",
-                "`LADDR` option."
-            ]
-        ],
         "acl_categories": [
             "@admin",
             "@slow",
@@ -1776,7 +1629,6 @@
                         "name": "old-format",
                         "type": "string",
                         "display_text": "ip:port",
-                        "deprecated_since": "2.8.12"
                     },
                     {
                         "name": "new-format",
@@ -1788,14 +1640,12 @@
                                 "type": "integer",
                                 "display_text": "client-id",
                                 "token": "ID",
-                                "since": "2.8.12",
                                 "optional": true
                             },
                             {
                                 "name": "client-type",
                                 "type": "oneof",
                                 "token": "TYPE",
-                                "since": "2.8.12",
                                 "optional": true,
                                 "arguments": [
                                     {
@@ -1809,7 +1659,6 @@
                                         "type": "pure-token",
                                         "display_text": "master",
                                         "token": "MASTER",
-                                        "since": "3.2.0"
                                     },
                                     {
                                         "name": "slave",
@@ -1822,7 +1671,6 @@
                                         "type": "pure-token",
                                         "display_text": "replica",
                                         "token": "REPLICA",
-                                        "since": "5.0.0"
                                     },
                                     {
                                         "name": "pubsub",
@@ -1851,7 +1699,6 @@
                                 "type": "string",
                                 "display_text": "ip:port",
                                 "token": "LADDR",
-                                "since": "6.2.0",
                                 "optional": true
                             },
                             {
@@ -1888,35 +1735,8 @@
     },
     "CLIENT LIST": {
         "summary": "Lists open connections.",
-        "since": "2.4.0",
         "group": "connection",
         "complexity": "O(N) where N is the number of client connections",
-        "history": [
-            [
-                "2.8.12",
-                "Added unique client `id` field."
-            ],
-            [
-                "5.0.0",
-                "Added optional `TYPE` filter."
-            ],
-            [
-                "6.0.0",
-                "Added `user` field."
-            ],
-            [
-                "6.2.0",
-                "Added `argv-mem`, `tot-mem`, `laddr` and `redir` fields and the optional `ID` filter."
-            ],
-            [
-                "7.0.0",
-                "Added `resp`, `multi-mem`, `rbs` and `rbp` fields."
-            ],
-            [
-                "7.0.3",
-                "Added `ssub` field."
-            ]
-        ],
         "acl_categories": [
             "@admin",
             "@slow",
@@ -1929,7 +1749,6 @@
                 "name": "client-type",
                 "type": "oneof",
                 "token": "TYPE",
-                "since": "5.0.0",
                 "optional": true,
                 "arguments": [
                     {
@@ -1963,7 +1782,6 @@
                 "type": "integer",
                 "display_text": "client-id",
                 "token": "ID",
-                "since": "6.2.0",
                 "optional": true,
                 "multiple": true
             }
@@ -1980,7 +1798,6 @@
     },
     "CLIENT NO-EVICT": {
         "summary": "Sets the client eviction mode of the connection.",
-        "since": "7.0.0",
         "group": "connection",
         "complexity": "O(1)",
         "acl_categories": [
@@ -2019,7 +1836,6 @@
     },
     "CLIENT NO-TOUCH": {
         "summary": "Controls whether commands sent by the client affect the LRU/LFU of accessed keys.",
-        "since": "7.2.0",
         "group": "connection",
         "complexity": "O(1)",
         "acl_categories": [
@@ -2055,15 +1871,8 @@
     },
     "CLIENT PAUSE": {
         "summary": "Suspends commands processing.",
-        "since": "3.0.0",
         "group": "connection",
         "complexity": "O(1)",
-        "history": [
-            [
-                "6.2.0",
-                "`CLIENT PAUSE WRITE` mode added along with the `mode` option."
-            ]
-        ],
         "acl_categories": [
             "@admin",
             "@slow",
@@ -2080,7 +1889,6 @@
             {
                 "name": "mode",
                 "type": "oneof",
-                "since": "6.2.0",
                 "optional": true,
                 "arguments": [
                     {
@@ -2107,7 +1915,6 @@
     },
     "CLIENT REPLY": {
         "summary": "Instructs the server whether to reply to commands.",
-        "since": "3.2.0",
         "group": "connection",
         "complexity": "O(1)",
         "acl_categories": [
@@ -2149,7 +1956,6 @@
     },
     "CLIENT SETINFO": {
         "summary": "Sets information specific to the client or connection.",
-        "since": "7.2.0",
         "group": "connection",
         "complexity": "O(1)",
         "acl_categories": [
@@ -2189,7 +1995,6 @@
     },
     "CLIENT SETNAME": {
         "summary": "Sets the connection name.",
-        "since": "2.6.9",
         "group": "connection",
         "complexity": "O(1)",
         "acl_categories": [
@@ -2216,7 +2021,6 @@
     },
     "CLIENT TRACKING": {
         "summary": "Controls server-assisted client-side caching for the connection.",
-        "since": "6.0.0",
         "group": "connection",
         "complexity": "O(1). Some options may introduce additional complexity.",
         "acl_categories": [
@@ -2296,7 +2100,6 @@
     },
     "CLIENT TRACKINGINFO": {
         "summary": "Returns information about server-assisted client-side caching for the connection.",
-        "since": "6.2.0",
         "group": "connection",
         "complexity": "O(1)",
         "acl_categories": [
@@ -2312,7 +2115,6 @@
     },
     "CLIENT UNBLOCK": {
         "summary": "Unblocks a client blocked by a blocking command from a different connection.",
-        "since": "5.0.0",
         "group": "connection",
         "complexity": "O(log N) where N is the number of client connections",
         "acl_categories": [
@@ -2357,7 +2159,6 @@
     },
     "CLIENT UNPAUSE": {
         "summary": "Resumes processing commands from paused clients.",
-        "since": "6.2.0",
         "group": "connection",
         "complexity": "O(N) Where N is the number of paused clients",
         "acl_categories": [
@@ -2376,7 +2177,6 @@
     },
     "CLUSTER": {
         "summary": "A container for Redis Cluster commands.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "Depends on subcommand.",
         "acl_categories": [
@@ -2386,7 +2186,6 @@
     },
     "CLUSTER ADDSLOTS": {
         "summary": "Assigns new hash slots to a node.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(N) where N is the total number of hash slot arguments",
         "acl_categories": [
@@ -2411,7 +2210,6 @@
     },
     "CLUSTER ADDSLOTSRANGE": {
         "summary": "Assigns new hash slot ranges to a node.",
-        "since": "7.0.0",
         "group": "cluster",
         "complexity": "O(N) where N is the total number of the slots between the start slot and end slot arguments.",
         "acl_categories": [
@@ -2447,7 +2245,6 @@
     },
     "CLUSTER BUMPEPOCH": {
         "summary": "Advances the cluster config epoch.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(1)",
         "acl_categories": [
@@ -2467,7 +2264,6 @@
     },
     "CLUSTER COUNT-FAILURE-REPORTS": {
         "summary": "Returns the number of active failure reports active for a node.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(N) where N is the number of failure reports",
         "acl_categories": [
@@ -2493,7 +2289,6 @@
     },
     "CLUSTER COUNTKEYSINSLOT": {
         "summary": "Returns the number of keys in a hash slot.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(1)",
         "acl_categories": [
@@ -2513,7 +2308,6 @@
     },
     "CLUSTER DELSLOTS": {
         "summary": "Sets hash slots as unbound for a node.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(N) where N is the total number of hash slot arguments",
         "acl_categories": [
@@ -2538,7 +2332,6 @@
     },
     "CLUSTER DELSLOTSRANGE": {
         "summary": "Sets hash slot ranges as unbound for a node.",
-        "since": "7.0.0",
         "group": "cluster",
         "complexity": "O(N) where N is the total number of the slots between the start slot and end slot arguments.",
         "acl_categories": [
@@ -2574,7 +2367,6 @@
     },
     "CLUSTER FAILOVER": {
         "summary": "Forces a replica to perform a manual failover of its master.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(1)",
         "acl_categories": [
@@ -2612,7 +2404,6 @@
     },
     "CLUSTER FLUSHSLOTS": {
         "summary": "Deletes all slots information from a node.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(1)",
         "acl_categories": [
@@ -2629,7 +2420,6 @@
     },
     "CLUSTER FORGET": {
         "summary": "Removes a node from the nodes table.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(1)",
         "acl_categories": [
@@ -2653,7 +2443,6 @@
     },
     "CLUSTER GETKEYSINSLOT": {
         "summary": "Returns the key names in a hash slot.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(N) where N is the number of requested keys",
         "acl_categories": [
@@ -2681,7 +2470,6 @@
     },
     "CLUSTER HELP": {
         "summary": "Returns helpful text about the different subcommands.",
-        "since": "5.0.0",
         "group": "cluster",
         "complexity": "O(1)",
         "acl_categories": [
@@ -2695,7 +2483,6 @@
     },
     "CLUSTER INFO": {
         "summary": "Returns information about the state of a node.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(1)",
         "acl_categories": [
@@ -2711,7 +2498,6 @@
     },
     "CLUSTER KEYSLOT": {
         "summary": "Returns the hash slot for a key.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(N) where N is the number of bytes in the key",
         "acl_categories": [
@@ -2731,7 +2517,6 @@
     },
     "CLUSTER LINKS": {
         "summary": "Returns a list of all TCP links to and from peer nodes.",
-        "since": "7.0.0",
         "group": "cluster",
         "complexity": "O(N) where N is the total number of Cluster nodes",
         "acl_categories": [
@@ -2747,15 +2532,8 @@
     },
     "CLUSTER MEET": {
         "summary": "Forces a node to handshake with another node.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(1)",
-        "history": [
-            [
-                "4.0.0",
-                "Added the optional `cluster_bus_port` argument."
-            ]
-        ],
         "acl_categories": [
             "@admin",
             "@slow",
@@ -2777,7 +2555,6 @@
                 "name": "cluster-bus-port",
                 "type": "integer",
                 "display_text": "cluster-bus-port",
-                "since": "4.0.0",
                 "optional": true
             }
         ],
@@ -2789,7 +2566,6 @@
     },
     "CLUSTER MYID": {
         "summary": "Returns the ID of a node.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(1)",
         "acl_categories": [
@@ -2802,7 +2578,6 @@
     },
     "CLUSTER MYSHARDID": {
         "summary": "Returns the shard ID of a node.",
-        "since": "7.2.0",
         "group": "cluster",
         "complexity": "O(1)",
         "acl_categories": [
@@ -2818,7 +2593,6 @@
     },
     "CLUSTER NODES": {
         "summary": "Returns the cluster configuration for a node.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(N) where N is the total number of Cluster nodes",
         "acl_categories": [
@@ -2834,7 +2608,6 @@
     },
     "CLUSTER REPLICAS": {
         "summary": "Lists the replica nodes of a master node.",
-        "since": "5.0.0",
         "group": "cluster",
         "complexity": "O(N) where N is the number of replicas.",
         "acl_categories": [
@@ -2860,7 +2633,6 @@
     },
     "CLUSTER REPLICATE": {
         "summary": "Configure a node as replica of a master node.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(1)",
         "acl_categories": [
@@ -2884,7 +2656,6 @@
     },
     "CLUSTER RESET": {
         "summary": "Resets a node.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(N) where N is the number of known nodes. The command may execute a FLUSHALL as a side effect.",
         "acl_categories": [
@@ -2922,7 +2693,6 @@
     },
     "CLUSTER SAVECONFIG": {
         "summary": "Forces a node to save the cluster configuration to disk.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(1)",
         "acl_categories": [
@@ -2939,7 +2709,6 @@
     },
     "CLUSTER SET-CONFIG-EPOCH": {
         "summary": "Sets the configuration epoch for a new node.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(1)",
         "acl_categories": [
@@ -2963,7 +2732,6 @@
     },
     "CLUSTER SETSLOT": {
         "summary": "Binds a hash slot to a node.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(1)",
         "acl_categories": [
@@ -3017,7 +2785,6 @@
     },
     "CLUSTER SHARDS": {
         "summary": "Returns the mapping of cluster slots to shards.",
-        "since": "7.0.0",
         "group": "cluster",
         "complexity": "O(N) where N is the total number of cluster nodes",
         "acl_categories": [
@@ -3034,10 +2801,8 @@
     },
     "CLUSTER SLAVES": {
         "summary": "Lists the replica nodes of a master node.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(N) where N is the number of replicas.",
-        "deprecated_since": "5.0.0",
         "replaced_by": "`CLUSTER REPLICAS`",
         "acl_categories": [
             "@admin",
@@ -3065,21 +2830,9 @@
     },
     "CLUSTER SLOTS": {
         "summary": "Returns the mapping of cluster slots to nodes.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(N) where N is the total number of Cluster nodes",
-        "deprecated_since": "7.0.0",
         "replaced_by": "`CLUSTER SHARDS`",
-        "history": [
-            [
-                "4.0.0",
-                "Added node IDs."
-            ],
-            [
-                "7.0.0",
-                "Added additional networking metadata field."
-            ]
-        ],
         "acl_categories": [
             "@slow"
         ],
@@ -3097,7 +2850,6 @@
     },
     "COMMAND": {
         "summary": "Returns detailed information about all commands.",
-        "since": "2.8.13",
         "group": "server",
         "complexity": "O(N) where N is the total number of Redis commands",
         "acl_categories": [
@@ -3115,7 +2867,6 @@
     },
     "COMMAND COUNT": {
         "summary": "Returns a count of commands.",
-        "since": "2.8.13",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -3130,7 +2881,6 @@
     },
     "COMMAND DOCS": {
         "summary": "Returns documentary information about one, multiple or all commands.",
-        "since": "7.0.0",
         "group": "server",
         "complexity": "O(N) where N is the number of commands to look up",
         "acl_categories": [
@@ -3157,7 +2907,6 @@
     },
     "COMMAND GETKEYS": {
         "summary": "Extracts the key names from an arbitrary command.",
-        "since": "2.8.13",
         "group": "server",
         "complexity": "O(N) where N is the number of arguments to the command",
         "acl_categories": [
@@ -3186,7 +2935,6 @@
     },
     "COMMAND GETKEYSANDFLAGS": {
         "summary": "Extracts the key names and access flags for an arbitrary command.",
-        "since": "7.0.0",
         "group": "server",
         "complexity": "O(N) where N is the number of arguments to the command",
         "acl_categories": [
@@ -3215,7 +2963,6 @@
     },
     "COMMAND HELP": {
         "summary": "Returns helpful text about the different subcommands.",
-        "since": "5.0.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -3230,15 +2977,8 @@
     },
     "COMMAND INFO": {
         "summary": "Returns information about one, multiple or all commands.",
-        "since": "2.8.13",
         "group": "server",
         "complexity": "O(N) where N is the number of commands to look up",
-        "history": [
-            [
-                "7.0.0",
-                "Allowed to be called with no argument to get info on all commands."
-            ]
-        ],
         "acl_categories": [
             "@slow",
             "@connection"
@@ -3263,7 +3003,6 @@
     },
     "COMMAND LIST": {
         "summary": "Returns a list of command names.",
-        "since": "7.0.0",
         "group": "server",
         "complexity": "O(N) where N is the total number of Redis commands",
         "acl_categories": [
@@ -3309,7 +3048,6 @@
     },
     "CONFIG": {
         "summary": "A container for server configuration commands.",
-        "since": "2.0.0",
         "group": "server",
         "complexity": "Depends on subcommand.",
         "acl_categories": [
@@ -3319,15 +3057,8 @@
     },
     "CONFIG GET": {
         "summary": "Returns the effective values of configuration parameters.",
-        "since": "2.0.0",
         "group": "server",
         "complexity": "O(N) when N is the number of configuration parameters provided",
-        "history": [
-            [
-                "7.0.0",
-                "Added the ability to pass multiple pattern parameters in one call"
-            ]
-        ],
         "acl_categories": [
             "@admin",
             "@slow",
@@ -3351,7 +3082,6 @@
     },
     "CONFIG HELP": {
         "summary": "Returns helpful text about the different subcommands.",
-        "since": "5.0.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -3365,7 +3095,6 @@
     },
     "CONFIG RESETSTAT": {
         "summary": "Resets the server's statistics.",
-        "since": "2.0.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -3387,7 +3116,6 @@
     },
     "CONFIG REWRITE": {
         "summary": "Persists the effective configuration to file.",
-        "since": "2.8.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -3409,15 +3137,8 @@
     },
     "CONFIG SET": {
         "summary": "Sets configuration parameters in-flight.",
-        "since": "2.0.0",
         "group": "server",
         "complexity": "O(N) when N is the number of configuration parameters provided",
-        "history": [
-            [
-                "7.0.0",
-                "Added the ability to set multiple parameters in one call."
-            ]
-        ],
         "acl_categories": [
             "@admin",
             "@slow",
@@ -3456,7 +3177,6 @@
     },
     "COPY": {
         "summary": "Copies the value of a key to a new key.",
-        "since": "6.2.0",
         "group": "generic",
         "complexity": "O(N) worst case for collections, where N is the number of nested items. O(1) for string values.",
         "acl_categories": [
@@ -3538,7 +3258,6 @@
     },
     "DBSIZE": {
         "summary": "Returns the number of keys in the database.",
-        "since": "1.0.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -3558,7 +3277,6 @@
     },
     "DEBUG": {
         "summary": "A container for debugging commands.",
-        "since": "1.0.0",
         "group": "server",
         "complexity": "Depends on subcommand.",
         "acl_categories": [
@@ -3579,7 +3297,6 @@
     },
     "DECR": {
         "summary": "Decrements the integer value of a key by one. Uses 0 as initial value if the key doesn't exist.",
-        "since": "1.0.0",
         "group": "string",
         "complexity": "O(1)",
         "acl_categories": [
@@ -3625,7 +3342,6 @@
     },
     "DECRBY": {
         "summary": "Decrements a number from the integer value of a key. Uses 0 as initial value if the key doesn't exist.",
-        "since": "1.0.0",
         "group": "string",
         "complexity": "O(1)",
         "acl_categories": [
@@ -3676,7 +3392,6 @@
     },
     "DEL": {
         "summary": "Deletes one or more keys.",
-        "since": "1.0.0",
         "group": "generic",
         "complexity": "O(N) where N is the number of keys that will be removed. When a key to remove holds a value other than a string, the individual complexity for this key is O(M) where M is the number of elements in the list, set, sorted set or hash. Removing a single key that holds a string value is O(1).",
         "acl_categories": [
@@ -3724,7 +3439,6 @@
     },
     "DISCARD": {
         "summary": "Discards a transaction.",
-        "since": "2.0.0",
         "group": "transactions",
         "complexity": "O(N), when N is the number of queued commands",
         "acl_categories": [
@@ -3742,7 +3456,6 @@
     },
     "DUMP": {
         "summary": "Returns a serialized representation of the value stored at a key.",
-        "since": "2.6.0",
         "group": "generic",
         "complexity": "O(1) to access the key and additional O(N*M) to serialize it, where N is the number of Redis objects composing the value and M their average size. For small string values the time complexity is thus O(1)+O(1*M) where M is small, so simply O(1).",
         "acl_categories": [
@@ -3788,7 +3501,6 @@
     },
     "ECHO": {
         "summary": "Returns the given string.",
-        "since": "1.0.0",
         "group": "connection",
         "complexity": "O(1)",
         "acl_categories": [
@@ -3811,7 +3523,6 @@
     },
     "EVAL": {
         "summary": "Executes a server-side Lua script.",
-        "since": "2.6.0",
         "group": "scripting",
         "complexity": "Depends on the script that is executed.",
         "acl_categories": [
@@ -3878,7 +3589,6 @@
     },
     "EVALSHA": {
         "summary": "Executes a server-side Lua script by SHA1 digest.",
-        "since": "2.6.0",
         "group": "scripting",
         "complexity": "Depends on the script that is executed.",
         "acl_categories": [
@@ -3944,7 +3654,6 @@
     },
     "EVALSHA_RO": {
         "summary": "Executes a read-only server-side Lua script by SHA1 digest.",
-        "since": "7.0.0",
         "group": "scripting",
         "complexity": "Depends on the script that is executed.",
         "acl_categories": [
@@ -4010,7 +3719,6 @@
     },
     "EVAL_RO": {
         "summary": "Executes a read-only server-side Lua script.",
-        "since": "7.0.0",
         "group": "scripting",
         "complexity": "Depends on the script that is executed.",
         "acl_categories": [
@@ -4077,7 +3785,6 @@
     },
     "EXEC": {
         "summary": "Executes all commands in a transaction.",
-        "since": "1.2.0",
         "group": "transactions",
         "complexity": "Depends on commands in the transaction",
         "acl_categories": [
@@ -4094,15 +3801,8 @@
     },
     "EXISTS": {
         "summary": "Determines whether one or more keys exist.",
-        "since": "1.0.0",
         "group": "generic",
         "complexity": "O(N) where N is the number of keys to check.",
-        "history": [
-            [
-                "3.0.3",
-                "Accepts multiple `key` arguments."
-            ]
-        ],
         "acl_categories": [
             "@keyspace",
             "@read",
@@ -4148,15 +3848,8 @@
     },
     "EXPIRE": {
         "summary": "Sets the expiration time of a key in seconds.",
-        "since": "1.0.0",
         "group": "generic",
         "complexity": "O(1)",
-        "history": [
-            [
-                "7.0.0",
-                "Added options: `NX`, `XX`, `GT` and `LT`."
-            ]
-        ],
         "acl_categories": [
             "@keyspace",
             "@write",
@@ -4198,7 +3891,6 @@
             {
                 "name": "condition",
                 "type": "oneof",
-                "since": "7.0.0",
                 "optional": true,
                 "arguments": [
                     {
@@ -4235,15 +3927,8 @@
     },
     "EXPIREAT": {
         "summary": "Sets the expiration time of a key to a Unix timestamp.",
-        "since": "1.2.0",
         "group": "generic",
         "complexity": "O(1)",
-        "history": [
-            [
-                "7.0.0",
-                "Added options: `NX`, `XX`, `GT` and `LT`."
-            ]
-        ],
         "acl_categories": [
             "@keyspace",
             "@write",
@@ -4285,7 +3970,6 @@
             {
                 "name": "condition",
                 "type": "oneof",
-                "since": "7.0.0",
                 "optional": true,
                 "arguments": [
                     {
@@ -4322,7 +4006,6 @@
     },
     "EXPIRETIME": {
         "summary": "Returns the expiration time of a key as a Unix timestamp.",
-        "since": "7.0.0",
         "group": "generic",
         "complexity": "O(1)",
         "acl_categories": [
@@ -4366,7 +4049,6 @@
     },
     "FAILOVER": {
         "summary": "Starts a coordinated failover from a server to one of its replicas.",
-        "since": "6.2.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -4424,7 +4106,6 @@
     },
     "FCALL": {
         "summary": "Invokes a function.",
-        "since": "7.0.0",
         "group": "scripting",
         "complexity": "Depends on the function that is executed.",
         "acl_categories": [
@@ -4491,7 +4172,6 @@
     },
     "FCALL_RO": {
         "summary": "Invokes a read-only function.",
-        "since": "7.0.0",
         "group": "scripting",
         "complexity": "Depends on the function that is executed.",
         "acl_categories": [
@@ -4558,19 +4238,8 @@
     },
     "FLUSHALL": {
         "summary": "Removes all keys from all databases.",
-        "since": "1.0.0",
         "group": "server",
         "complexity": "O(N) where N is the total number of keys in all databases",
-        "history": [
-            [
-                "4.0.0",
-                "Added the `ASYNC` flushing mode modifier."
-            ],
-            [
-                "6.2.0",
-                "Added the `SYNC` flushing mode modifier."
-            ]
-        ],
         "acl_categories": [
             "@keyspace",
             "@write",
@@ -4589,14 +4258,12 @@
                         "type": "pure-token",
                         "display_text": "async",
                         "token": "ASYNC",
-                        "since": "4.0.0"
                     },
                     {
                         "name": "sync",
                         "type": "pure-token",
                         "display_text": "sync",
                         "token": "SYNC",
-                        "since": "6.2.0"
                     }
                 ]
             }
@@ -4611,19 +4278,8 @@
     },
     "FLUSHDB": {
         "summary": "Remove all keys from the current database.",
-        "since": "1.0.0",
         "group": "server",
         "complexity": "O(N) where N is the number of keys in the selected database",
-        "history": [
-            [
-                "4.0.0",
-                "Added the `ASYNC` flushing mode modifier."
-            ],
-            [
-                "6.2.0",
-                "Added the `SYNC` flushing mode modifier."
-            ]
-        ],
         "acl_categories": [
             "@keyspace",
             "@write",
@@ -4641,15 +4297,13 @@
                         "name": "async",
                         "type": "pure-token",
                         "display_text": "async",
-                        "token": "ASYNC",
-                        "since": "4.0.0"
+                        "token": "ASYNC"
                     },
                     {
                         "name": "sync",
                         "type": "pure-token",
                         "display_text": "sync",
-                        "token": "SYNC",
-                        "since": "6.2.0"
+                        "token": "SYNC"
                     }
                 ]
             }
@@ -4664,7 +4318,6 @@
     },
     "FUNCTION": {
         "summary": "A container for function commands.",
-        "since": "7.0.0",
         "group": "scripting",
         "complexity": "Depends on subcommand.",
         "acl_categories": [
@@ -4674,7 +4327,6 @@
     },
     "FUNCTION DELETE": {
         "summary": "Deletes a library and its functions.",
-        "since": "7.0.0",
         "group": "scripting",
         "complexity": "O(1)",
         "acl_categories": [
@@ -4701,7 +4353,6 @@
     },
     "FUNCTION DUMP": {
         "summary": "Dumps all libraries into a serialized binary payload.",
-        "since": "7.0.0",
         "group": "scripting",
         "complexity": "O(N) where N is the number of functions",
         "acl_categories": [
@@ -4715,7 +4366,6 @@
     },
     "FUNCTION FLUSH": {
         "summary": "Deletes all libraries and functions.",
-        "since": "7.0.0",
         "group": "scripting",
         "complexity": "O(N) where N is the number of functions deleted",
         "acl_categories": [
@@ -4756,7 +4406,6 @@
     },
     "FUNCTION HELP": {
         "summary": "Returns helpful text about the different subcommands.",
-        "since": "7.0.0",
         "group": "scripting",
         "complexity": "O(1)",
         "acl_categories": [
@@ -4771,7 +4420,6 @@
     },
     "FUNCTION KILL": {
         "summary": "Terminates a function during execution.",
-        "since": "7.0.0",
         "group": "scripting",
         "complexity": "O(1)",
         "acl_categories": [
@@ -4790,7 +4438,6 @@
     },
     "FUNCTION LIST": {
         "summary": "Returns information about all libraries.",
-        "since": "7.0.0",
         "group": "scripting",
         "complexity": "O(N) where N is the number of functions",
         "acl_categories": [
@@ -4823,7 +4470,6 @@
     },
     "FUNCTION LOAD": {
         "summary": "Creates a library.",
-        "since": "7.0.0",
         "group": "scripting",
         "complexity": "O(1) (considering compilation time is redundant)",
         "acl_categories": [
@@ -4858,7 +4504,6 @@
     },
     "FUNCTION RESTORE": {
         "summary": "Restores all libraries from a payload.",
-        "since": "7.0.0",
         "group": "scripting",
         "complexity": "O(N) where N is the number of functions on the payload",
         "acl_categories": [
@@ -4911,7 +4556,6 @@
     },
     "FUNCTION STATS": {
         "summary": "Returns information about a function during execution.",
-        "since": "7.0.0",
         "group": "scripting",
         "complexity": "O(1)",
         "acl_categories": [
@@ -4931,15 +4575,8 @@
     },
     "GEOADD": {
         "summary": "Adds one or more members to a geospatial index. The key is created if it doesn't exist.",
-        "since": "3.2.0",
         "group": "geo",
         "complexity": "O(log(N)) for each item added, where N is the number of elements in the sorted set.",
-        "history": [
-            [
-                "6.2.0",
-                "Added the `CH`, `NX` and `XX` options."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@geo",
@@ -4976,7 +4613,6 @@
             {
                 "name": "condition",
                 "type": "oneof",
-                "since": "6.2.0",
                 "optional": true,
                 "arguments": [
                     {
@@ -4998,7 +4634,6 @@
                 "type": "pure-token",
                 "display_text": "change",
                 "token": "CH",
-                "since": "6.2.0",
                 "optional": true
             },
             {
@@ -5031,7 +4666,6 @@
     },
     "GEODIST": {
         "summary": "Returns the distance between two members of a geospatial index.",
-        "since": "3.2.0",
         "group": "geo",
         "complexity": "O(1)",
         "acl_categories": [
@@ -5115,7 +4749,6 @@
     },
     "GEOHASH": {
         "summary": "Returns members from a geospatial index as geohash strings.",
-        "since": "3.2.0",
         "group": "geo",
         "complexity": "O(1) for each member requested.",
         "acl_categories": [
@@ -5165,7 +4798,6 @@
     },
     "GEOPOS": {
         "summary": "Returns the longitude and latitude of members from a geospatial index.",
-        "since": "3.2.0",
         "group": "geo",
         "complexity": "O(1) for each member requested.",
         "acl_categories": [
@@ -5215,21 +4847,9 @@
     },
     "GEORADIUS": {
         "summary": "Queries a geospatial index for members within a distance from a coordinate, optionally stores the result.",
-        "since": "3.2.0",
         "group": "geo",
         "complexity": "O(N+log(M)) where N is the number of elements inside the bounding box of the circular area delimited by center and radius and M is the number of items inside the index.",
-        "deprecated_since": "6.2.0",
         "replaced_by": "`GEOSEARCH` and `GEOSEARCHSTORE` with the `BYRADIUS` argument",
-        "history": [
-            [
-                "6.2.0",
-                "Added the `ANY` option for `COUNT`."
-            ],
-            [
-                "7.0.0",
-                "Added support for uppercase unit names."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@geo",
@@ -5383,7 +5003,6 @@
                         "type": "pure-token",
                         "display_text": "any",
                         "token": "ANY",
-                        "since": "6.2.0",
                         "optional": true
                     }
                 ]
@@ -5440,17 +5059,9 @@
     },
     "GEORADIUSBYMEMBER": {
         "summary": "Queries a geospatial index for members within a distance from a member, optionally stores the result.",
-        "since": "3.2.0",
         "group": "geo",
         "complexity": "O(N+log(M)) where N is the number of elements inside the bounding box of the circular area delimited by center and radius and M is the number of items inside the index.",
-        "deprecated_since": "6.2.0",
         "replaced_by": "`GEOSEARCH` and `GEOSEARCHSTORE` with the `BYRADIUS` and `FROMMEMBER` arguments",
-        "history": [
-            [
-                "7.0.0",
-                "Added support for uppercase unit names."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@geo",
@@ -5655,10 +5266,8 @@
     },
     "GEORADIUSBYMEMBER_RO": {
         "summary": "Returns members from a geospatial index that are within a distance from a member.",
-        "since": "3.2.10",
         "group": "geo",
         "complexity": "O(N+log(M)) where N is the number of elements inside the bounding box of the circular area delimited by center and radius and M is the number of items inside the index.",
-        "deprecated_since": "6.2.0",
         "replaced_by": "`GEOSEARCH` with the `BYRADIUS` and `FROMMEMBER` arguments",
         "acl_categories": [
             "@read",
@@ -5803,17 +5412,9 @@
     },
     "GEORADIUS_RO": {
         "summary": "Returns members from a geospatial index that are within a distance from a coordinate.",
-        "since": "3.2.10",
         "group": "geo",
         "complexity": "O(N+log(M)) where N is the number of elements inside the bounding box of the circular area delimited by center and radius and M is the number of items inside the index.",
-        "deprecated_since": "6.2.0",
         "replaced_by": "`GEOSEARCH` with the `BYRADIUS` argument",
-        "history": [
-            [
-                "6.2.0",
-                "Added the `ANY` option for `COUNT`."
-            ]
-        ],
         "acl_categories": [
             "@read",
             "@geo",
@@ -5929,7 +5530,6 @@
                         "type": "pure-token",
                         "display_text": "any",
                         "token": "ANY",
-                        "since": "6.2.0",
                         "optional": true
                     }
                 ]
@@ -5963,15 +5563,8 @@
     },
     "GEOSEARCH": {
         "summary": "Queries a geospatial index for members inside an area of a box or a circle.",
-        "since": "6.2.0",
         "group": "geo",
         "complexity": "O(N+log(M)) where N is the number of elements in the grid-aligned bounding box area around the shape provided as the filter and M is the number of items inside the shape",
-        "history": [
-            [
-                "7.0.0",
-                "Added support for uppercase unit names."
-            ]
-        ],
         "acl_categories": [
             "@read",
             "@geo",
@@ -6196,15 +5789,8 @@
     },
     "GEOSEARCHSTORE": {
         "summary": "Queries a geospatial index for members inside an area of a box or a circle, optionally stores the result.",
-        "since": "6.2.0",
         "group": "geo",
         "complexity": "O(N+log(M)) where N is the number of elements in the grid-aligned bounding box area around the shape provided as the filter and M is the number of items inside the shape",
-        "history": [
-            [
-                "7.0.0",
-                "Added support for uppercase unit names."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@geo",
@@ -6440,7 +6026,6 @@
     },
     "GET": {
         "summary": "Returns the string value of a key.",
-        "since": "1.0.0",
         "group": "string",
         "complexity": "O(1)",
         "acl_categories": [
@@ -6484,7 +6069,6 @@
     },
     "GETBIT": {
         "summary": "Returns a bit value by offset.",
-        "since": "2.2.0",
         "group": "bitmap",
         "complexity": "O(1)",
         "acl_categories": [
@@ -6533,7 +6117,6 @@
     },
     "GETDEL": {
         "summary": "Returns the string value of a key after deleting the key.",
-        "since": "6.2.0",
         "group": "string",
         "complexity": "O(1)",
         "acl_categories": [
@@ -6578,7 +6161,6 @@
     },
     "GETEX": {
         "summary": "Returns the string value of a key after setting its expiration time.",
-        "since": "6.2.0",
         "group": "string",
         "complexity": "O(1)",
         "acl_categories": [
@@ -6661,7 +6243,6 @@
     },
     "GETRANGE": {
         "summary": "Returns a substring of the string stored at a key.",
-        "since": "2.4.0",
         "group": "string",
         "complexity": "O(N) where N is the length of the returned string. The complexity is ultimately determined by the returned length, but because creating a substring from an existing string is very cheap, it can be considered O(1) for small strings.",
         "acl_categories": [
@@ -6714,10 +6295,8 @@
     },
     "GETSET": {
         "summary": "Returns the previous string value of a key after setting it to a new value.",
-        "since": "1.0.0",
         "group": "string",
         "complexity": "O(1)",
-        "deprecated_since": "6.2.0",
         "replaced_by": "`SET` with the `!GET` argument",
         "acl_categories": [
             "@write",
@@ -6770,15 +6349,8 @@
     },
     "HDEL": {
         "summary": "Deletes one or more fields and their values from a hash. Deletes the hash if no fields remain.",
-        "since": "2.0.0",
         "group": "hash",
         "complexity": "O(N) where N is the number of fields to be removed.",
-        "history": [
-            [
-                "2.4.0",
-                "Accepts multiple `field` arguments."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@hash",
@@ -6826,15 +6398,8 @@
     },
     "HELLO": {
         "summary": "Handshakes with the Redis server.",
-        "since": "6.0.0",
         "group": "connection",
         "complexity": "O(1)",
-        "history": [
-            [
-                "6.2.0",
-                "`protover` made optional; when called without arguments the command reports the current connection's context."
-            ]
-        ],
         "acl_categories": [
             "@fast",
             "@connection"
@@ -6890,7 +6455,6 @@
     },
     "HEXISTS": {
         "summary": "Determines whether a field exists in a hash.",
-        "since": "2.0.0",
         "group": "hash",
         "complexity": "O(1)",
         "acl_categories": [
@@ -6938,7 +6502,6 @@
     },
     "HGET": {
         "summary": "Returns the value of a field in a hash.",
-        "since": "2.0.0",
         "group": "hash",
         "complexity": "O(1)",
         "acl_categories": [
@@ -6987,7 +6550,6 @@
     },
     "HGETALL": {
         "summary": "Returns all fields and values in a hash.",
-        "since": "2.0.0",
         "group": "hash",
         "complexity": "O(N) where N is the size of the hash.",
         "acl_categories": [
@@ -7033,7 +6595,6 @@
     },
     "HINCRBY": {
         "summary": "Increments the integer value of a field in a hash by a number. Uses 0 as initial value if the field doesn't exist.",
-        "since": "2.0.0",
         "group": "hash",
         "complexity": "O(1)",
         "acl_categories": [
@@ -7089,7 +6650,6 @@
     },
     "HINCRBYFLOAT": {
         "summary": "Increments the floating point value of a field by a number. Uses 0 as initial value if the field doesn't exist.",
-        "since": "2.6.0",
         "group": "hash",
         "complexity": "O(1)",
         "acl_categories": [
@@ -7145,7 +6705,6 @@
     },
     "HKEYS": {
         "summary": "Returns all fields in a hash.",
-        "since": "2.0.0",
         "group": "hash",
         "complexity": "O(N) where N is the size of the hash.",
         "acl_categories": [
@@ -7191,7 +6750,6 @@
     },
     "HLEN": {
         "summary": "Returns the number of fields in a hash.",
-        "since": "2.0.0",
         "group": "hash",
         "complexity": "O(1)",
         "acl_categories": [
@@ -7234,7 +6792,6 @@
     },
     "HMGET": {
         "summary": "Returns the values of all fields in a hash.",
-        "since": "2.0.0",
         "group": "hash",
         "complexity": "O(N) where N is the number of fields being requested.",
         "acl_categories": [
@@ -7284,10 +6841,8 @@
     },
     "HMSET": {
         "summary": "Sets the values of multiple fields.",
-        "since": "2.0.0",
         "group": "hash",
         "complexity": "O(N) where N is the number of fields being set.",
-        "deprecated_since": "4.0.0",
         "replaced_by": "`HSET` with multiple field-value pairs",
         "acl_categories": [
             "@write",
@@ -7351,7 +6906,6 @@
     },
     "HRANDFIELD": {
         "summary": "Returns one or more random fields from a hash.",
-        "since": "6.2.0",
         "group": "hash",
         "complexity": "O(N) where N is the number of fields returned",
         "acl_categories": [
@@ -7416,7 +6970,6 @@
     },
     "HSCAN": {
         "summary": "Iterates over fields and values of a hash.",
-        "since": "2.8.0",
         "group": "hash",
         "complexity": "O(1) for every call. O(N) for a complete iteration, including enough command calls for the cursor to return back to 0. N is the number of elements inside the collection.",
         "acl_categories": [
@@ -7481,15 +7034,8 @@
     },
     "HSET": {
         "summary": "Creates or modifies the value of a field in a hash.",
-        "since": "2.0.0",
         "group": "hash",
         "complexity": "O(1) for each field/value pair added, so O(N) to add N field/value pairs when the command is called with multiple field/value pairs.",
-        "history": [
-            [
-                "4.0.0",
-                "Accepts multiple `field` and `value` arguments."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@hash",
@@ -7549,7 +7095,6 @@
     },
     "HSETNX": {
         "summary": "Sets the value of a field in a hash only when the field doesn't exist.",
-        "since": "2.0.0",
         "group": "hash",
         "complexity": "O(1)",
         "acl_categories": [
@@ -7604,7 +7149,6 @@
     },
     "HSTRLEN": {
         "summary": "Returns the length of the value of a field.",
-        "since": "3.2.0",
         "group": "hash",
         "complexity": "O(1)",
         "acl_categories": [
@@ -7652,7 +7196,6 @@
     },
     "HVALS": {
         "summary": "Returns all values in a hash.",
-        "since": "2.0.0",
         "group": "hash",
         "complexity": "O(N) where N is the size of the hash.",
         "acl_categories": [
@@ -7698,7 +7241,6 @@
     },
     "INCR": {
         "summary": "Increments the integer value of a key by one. Uses 0 as initial value if the key doesn't exist.",
-        "since": "1.0.0",
         "group": "string",
         "complexity": "O(1)",
         "acl_categories": [
@@ -7744,7 +7286,6 @@
     },
     "INCRBY": {
         "summary": "Increments the integer value of a key by a number. Uses 0 as initial value if the key doesn't exist.",
-        "since": "1.0.0",
         "group": "string",
         "complexity": "O(1)",
         "acl_categories": [
@@ -7795,7 +7336,6 @@
     },
     "INCRBYFLOAT": {
         "summary": "Increment the floating point value of a key by a number. Uses 0 as initial value if the key doesn't exist.",
-        "since": "2.6.0",
         "group": "string",
         "complexity": "O(1)",
         "acl_categories": [
@@ -7846,15 +7386,8 @@
     },
     "INFO": {
         "summary": "Returns information and statistics about the server.",
-        "since": "1.0.0",
         "group": "server",
         "complexity": "O(1)",
-        "history": [
-            [
-                "7.0.0",
-                "Added support for taking multiple section arguments."
-            ]
-        ],
         "acl_categories": [
             "@slow",
             "@dangerous"
@@ -7881,7 +7414,6 @@
     },
     "KEYS": {
         "summary": "Returns all key names that match a pattern.",
-        "since": "1.0.0",
         "group": "generic",
         "complexity": "O(N) with N being the number of keys in the database, under the assumption that the key names in the database and the given pattern have limited length.",
         "acl_categories": [
@@ -7908,7 +7440,6 @@
     },
     "LASTSAVE": {
         "summary": "Returns the Unix timestamp of the last successful save to disk.",
-        "since": "1.0.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -7928,7 +7459,6 @@
     },
     "LATENCY": {
         "summary": "A container for latency diagnostics commands.",
-        "since": "2.8.13",
         "group": "server",
         "complexity": "Depends on subcommand.",
         "acl_categories": [
@@ -7938,7 +7468,6 @@
     },
     "LATENCY DOCTOR": {
         "summary": "Returns a human-readable latency analysis report.",
-        "since": "2.8.13",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -7961,7 +7490,6 @@
     },
     "LATENCY GRAPH": {
         "summary": "Returns a latency graph for an event.",
-        "since": "2.8.13",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -7991,7 +7519,6 @@
     },
     "LATENCY HELP": {
         "summary": "Returns helpful text about the different subcommands.",
-        "since": "2.8.13",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -8005,7 +7532,6 @@
     },
     "LATENCY HISTOGRAM": {
         "summary": "Returns the cumulative distribution of latencies of a subset or all commands.",
-        "since": "7.0.0",
         "group": "server",
         "complexity": "O(N) where N is the number of commands with latency information being retrieved.",
         "acl_categories": [
@@ -8037,7 +7563,6 @@
     },
     "LATENCY HISTORY": {
         "summary": "Returns timestamp-latency samples for an event.",
-        "since": "2.8.13",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -8067,7 +7592,6 @@
     },
     "LATENCY LATEST": {
         "summary": "Returns the latest latency samples for all events.",
-        "since": "2.8.13",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -8090,7 +7614,6 @@
     },
     "LATENCY RESET": {
         "summary": "Resets the latency data for one or more events.",
-        "since": "2.8.13",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -8121,7 +7644,6 @@
     },
     "LCS": {
         "summary": "Finds the longest common substring.",
-        "since": "7.0.0",
         "group": "string",
         "complexity": "O(N*M) where N and M are the lengths of s1 and s2, respectively",
         "acl_categories": [
@@ -8198,7 +7720,6 @@
     },
     "LINDEX": {
         "summary": "Returns an element from a list by its index.",
-        "since": "1.0.0",
         "group": "list",
         "complexity": "O(N) where N is the number of elements to traverse to get to the element at index. This makes asking for the first or the last element of the list O(1).",
         "acl_categories": [
@@ -8246,7 +7767,6 @@
     },
     "LINSERT": {
         "summary": "Inserts an element before or after another element in a list.",
-        "since": "2.2.0",
         "group": "list",
         "complexity": "O(N) where N is the number of elements to traverse before seeing the value pivot. This means that inserting somewhere on the left end on the list (head) can be considered O(1) and inserting somewhere on the right end (tail) is O(N).",
         "acl_categories": [
@@ -8318,7 +7838,6 @@
     },
     "LLEN": {
         "summary": "Returns the length of a list.",
-        "since": "1.0.0",
         "group": "list",
         "complexity": "O(1)",
         "acl_categories": [
@@ -8361,7 +7880,6 @@
     },
     "LMOVE": {
         "summary": "Returns an element after popping it from one list and pushing it to another. Deletes the list if the last element was moved.",
-        "since": "6.2.0",
         "group": "list",
         "complexity": "O(1)",
         "acl_categories": [
@@ -8466,7 +7984,6 @@
     },
     "LMPOP": {
         "summary": "Returns multiple elements from a list after removing them. Deletes the list if the last element was popped.",
-        "since": "7.0.0",
         "group": "list",
         "complexity": "O(N+M) where N is the number of provided keys and M is the number of elements returned.",
         "acl_categories": [
@@ -8542,7 +8059,6 @@
     },
     "LOLWUT": {
         "summary": "Displays computer art and the Redis version",
-        "since": "5.0.0",
         "group": "server",
         "acl_categories": [
             "@read",
@@ -8565,15 +8081,8 @@
     },
     "LPOP": {
         "summary": "Returns the first elements in a list after removing it. Deletes the list if the last element was popped.",
-        "since": "1.0.0",
         "group": "list",
         "complexity": "O(N) where N is the number of elements returned",
-        "history": [
-            [
-                "6.2.0",
-                "Added the `count` argument."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@list",
@@ -8612,7 +8121,6 @@
                 "name": "count",
                 "type": "integer",
                 "display_text": "count",
-                "since": "6.2.0",
                 "optional": true
             }
         ],
@@ -8623,7 +8131,6 @@
     },
     "LPOS": {
         "summary": "Returns the index of matching elements in a list.",
-        "since": "6.0.6",
         "group": "list",
         "complexity": "O(N) where N is the number of elements in the list, for the average case. When searching for elements near the head or the tail of the list, or when the MAXLEN option is provided, the command may run in constant time.",
         "acl_categories": [
@@ -8692,15 +8199,8 @@
     },
     "LPUSH": {
         "summary": "Prepends one or more elements to a list. Creates the key if it doesn't exist.",
-        "since": "1.0.0",
         "group": "list",
         "complexity": "O(1) for each element added, so O(N) to add N elements when the command is called with multiple arguments.",
-        "history": [
-            [
-                "2.4.0",
-                "Accepts multiple `element` arguments."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@list",
@@ -8749,15 +8249,8 @@
     },
     "LPUSHX": {
         "summary": "Prepends one or more elements to a list only when the list exists.",
-        "since": "2.2.0",
         "group": "list",
         "complexity": "O(1) for each element added, so O(N) to add N elements when the command is called with multiple arguments.",
-        "history": [
-            [
-                "4.0.0",
-                "Accepts multiple `element` arguments."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@list",
@@ -8806,7 +8299,6 @@
     },
     "LRANGE": {
         "summary": "Returns a range of elements from a list.",
-        "since": "1.0.0",
         "group": "list",
         "complexity": "O(S+N) where S is the distance of start offset from HEAD for small lists, from nearest end (HEAD or TAIL) for large lists; and N is the number of elements in the specified range.",
         "acl_categories": [
@@ -8859,7 +8351,6 @@
     },
     "LREM": {
         "summary": "Removes elements from a list. Deletes the list if the last element was removed.",
-        "since": "1.0.0",
         "group": "list",
         "complexity": "O(N+M) where N is the length of the list and M is the number of elements removed.",
         "acl_categories": [
@@ -8912,7 +8403,6 @@
     },
     "LSET": {
         "summary": "Sets the value of an element in a list by its index.",
-        "since": "1.0.0",
         "group": "list",
         "complexity": "O(N) where N is the length of the list. Setting either the first or the last element of the list is O(1).",
         "acl_categories": [
@@ -8966,7 +8456,6 @@
     },
     "LTRIM": {
         "summary": "Removes elements from both ends a list. Deletes the list if all elements were trimmed.",
-        "since": "1.0.0",
         "group": "list",
         "complexity": "O(N) where N is the number of elements to be removed by the operation.",
         "acl_categories": [
@@ -9019,7 +8508,6 @@
     },
     "MEMORY": {
         "summary": "A container for memory diagnostics commands.",
-        "since": "4.0.0",
         "group": "server",
         "complexity": "Depends on subcommand.",
         "acl_categories": [
@@ -9029,7 +8517,6 @@
     },
     "MEMORY DOCTOR": {
         "summary": "Outputs a memory problems report.",
-        "since": "4.0.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -9044,7 +8531,6 @@
     },
     "MEMORY HELP": {
         "summary": "Returns helpful text about the different subcommands.",
-        "since": "4.0.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -9058,7 +8544,6 @@
     },
     "MEMORY MALLOC-STATS": {
         "summary": "Returns the allocator statistics.",
-        "since": "4.0.0",
         "group": "server",
         "complexity": "Depends on how much memory is allocated, could be slow",
         "acl_categories": [
@@ -9073,7 +8558,6 @@
     },
     "MEMORY PURGE": {
         "summary": "Asks the allocator to release memory.",
-        "since": "4.0.0",
         "group": "server",
         "complexity": "Depends on how much memory is allocated, could be slow",
         "acl_categories": [
@@ -9087,7 +8571,6 @@
     },
     "MEMORY STATS": {
         "summary": "Returns details about memory usage.",
-        "since": "4.0.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -9102,7 +8585,6 @@
     },
     "MEMORY USAGE": {
         "summary": "Estimates the memory usage of a key.",
-        "since": "4.0.0",
         "group": "server",
         "complexity": "O(N) where N is the number of samples.",
         "acl_categories": [
@@ -9150,7 +8632,6 @@
     },
     "MGET": {
         "summary": "Atomically returns the string values of one or more keys.",
-        "since": "1.0.0",
         "group": "string",
         "complexity": "O(N) where N is the number of keys to retrieve.",
         "acl_categories": [
@@ -9198,27 +8679,8 @@
     },
     "MIGRATE": {
         "summary": "Atomically transfers a key from one Redis instance to another.",
-        "since": "2.6.0",
         "group": "generic",
         "complexity": "This command actually executes a DUMP+DEL in the source instance, and a RESTORE in the target instance. See the pages of these commands for time complexity. Also an O(N) data transfer between the two instances is performed.",
-        "history": [
-            [
-                "3.0.0",
-                "Added the `COPY` and `REPLACE` options."
-            ],
-            [
-                "3.0.6",
-                "Added the `KEYS` option."
-            ],
-            [
-                "4.0.7",
-                "Added the `AUTH` option."
-            ],
-            [
-                "6.0.0",
-                "Added the `AUTH2` option."
-            ]
-        ],
         "acl_categories": [
             "@keyspace",
             "@write",
@@ -9312,7 +8774,6 @@
                 "type": "pure-token",
                 "display_text": "copy",
                 "token": "COPY",
-                "since": "3.0.0",
                 "optional": true
             },
             {
@@ -9320,7 +8781,6 @@
                 "type": "pure-token",
                 "display_text": "replace",
                 "token": "REPLACE",
-                "since": "3.0.0",
                 "optional": true
             },
             {
@@ -9332,14 +8792,12 @@
                         "name": "auth",
                         "type": "string",
                         "display_text": "password",
-                        "token": "AUTH",
-                        "since": "4.0.7"
+                        "token": "AUTH"
                     },
                     {
                         "name": "auth2",
                         "type": "block",
                         "token": "AUTH2",
-                        "since": "6.0.0",
                         "arguments": [
                             {
                                 "name": "username",
@@ -9361,7 +8819,6 @@
                 "display_text": "key",
                 "key_spec_index": 1,
                 "token": "KEYS",
-                "since": "3.0.6",
                 "optional": true,
                 "multiple": true
             }
@@ -9376,7 +8833,6 @@
     },
     "MODULE": {
         "summary": "A container for module commands.",
-        "since": "4.0.0",
         "group": "server",
         "complexity": "Depends on subcommand.",
         "acl_categories": [
@@ -9386,7 +8842,6 @@
     },
     "MODULE HELP": {
         "summary": "Returns helpful text about the different subcommands.",
-        "since": "5.0.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -9400,7 +8855,6 @@
     },
     "MODULE LIST": {
         "summary": "Returns all loaded modules.",
-        "since": "4.0.0",
         "group": "server",
         "complexity": "O(N) where N is the number of loaded modules.",
         "acl_categories": [
@@ -9419,7 +8873,6 @@
     },
     "MODULE LOAD": {
         "summary": "Loads a module.",
-        "since": "4.0.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -9450,7 +8903,6 @@
     },
     "MODULE LOADEX": {
         "summary": "Loads a module using extended parameters.",
-        "since": "7.0.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -9502,7 +8954,6 @@
     },
     "MODULE UNLOAD": {
         "summary": "Unloads a module.",
-        "since": "4.0.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -9526,7 +8977,6 @@
     },
     "MONITOR": {
         "summary": "Listens for all requests received by the server in real-time.",
-        "since": "1.0.0",
         "group": "server",
         "acl_categories": [
             "@admin",
@@ -9543,7 +8993,6 @@
     },
     "MOVE": {
         "summary": "Moves a key to another database.",
-        "since": "1.0.0",
         "group": "generic",
         "complexity": "O(1)",
         "acl_categories": [
@@ -9593,7 +9042,6 @@
     },
     "MSET": {
         "summary": "Atomically creates or modifies the string values of one or more keys.",
-        "since": "1.0.1",
         "group": "string",
         "complexity": "O(N) where N is the number of keys to set.",
         "acl_categories": [
@@ -9653,7 +9101,6 @@
     },
     "MSETNX": {
         "summary": "Atomically modifies the string values of one or more keys only when all keys don't exist.",
-        "since": "1.0.1",
         "group": "string",
         "complexity": "O(N) where N is the number of keys to set.",
         "acl_categories": [
@@ -9709,7 +9156,6 @@
     },
     "MULTI": {
         "summary": "Starts a transaction.",
-        "since": "1.2.0",
         "group": "transactions",
         "complexity": "O(1)",
         "acl_categories": [
@@ -9727,7 +9173,6 @@
     },
     "OBJECT": {
         "summary": "A container for object introspection commands.",
-        "since": "2.2.3",
         "group": "generic",
         "complexity": "Depends on subcommand.",
         "acl_categories": [
@@ -9737,7 +9182,6 @@
     },
     "OBJECT ENCODING": {
         "summary": "Returns the internal encoding of a Redis object.",
-        "since": "2.2.3",
         "group": "generic",
         "complexity": "O(1)",
         "acl_categories": [
@@ -9782,7 +9226,6 @@
     },
     "OBJECT FREQ": {
         "summary": "Returns the logarithmic access frequency counter of a Redis object.",
-        "since": "4.0.0",
         "group": "generic",
         "complexity": "O(1)",
         "acl_categories": [
@@ -9827,7 +9270,6 @@
     },
     "OBJECT HELP": {
         "summary": "Returns helpful text about the different subcommands.",
-        "since": "6.2.0",
         "group": "generic",
         "complexity": "O(1)",
         "acl_categories": [
@@ -9842,7 +9284,6 @@
     },
     "OBJECT IDLETIME": {
         "summary": "Returns the time since the last access to a Redis object.",
-        "since": "2.2.3",
         "group": "generic",
         "complexity": "O(1)",
         "acl_categories": [
@@ -9887,7 +9328,6 @@
     },
     "OBJECT REFCOUNT": {
         "summary": "Returns the reference count of a value of a key.",
-        "since": "2.2.3",
         "group": "generic",
         "complexity": "O(1)",
         "acl_categories": [
@@ -9932,7 +9372,6 @@
     },
     "PERSIST": {
         "summary": "Removes the expiration time of a key.",
-        "since": "2.2.0",
         "group": "generic",
         "complexity": "O(1)",
         "acl_categories": [
@@ -9976,15 +9415,8 @@
     },
     "PEXPIRE": {
         "summary": "Sets the expiration time of a key in milliseconds.",
-        "since": "2.6.0",
         "group": "generic",
         "complexity": "O(1)",
-        "history": [
-            [
-                "7.0.0",
-                "Added options: `NX`, `XX`, `GT` and `LT`."
-            ]
-        ],
         "acl_categories": [
             "@keyspace",
             "@write",
@@ -10026,7 +9458,6 @@
             {
                 "name": "condition",
                 "type": "oneof",
-                "since": "7.0.0",
                 "optional": true,
                 "arguments": [
                     {
@@ -10063,15 +9494,8 @@
     },
     "PEXPIREAT": {
         "summary": "Sets the expiration time of a key to a Unix milliseconds timestamp.",
-        "since": "2.6.0",
         "group": "generic",
         "complexity": "O(1)",
-        "history": [
-            [
-                "7.0.0",
-                "Added options: `NX`, `XX`, `GT` and `LT`."
-            ]
-        ],
         "acl_categories": [
             "@keyspace",
             "@write",
@@ -10113,7 +9537,6 @@
             {
                 "name": "condition",
                 "type": "oneof",
-                "since": "7.0.0",
                 "optional": true,
                 "arguments": [
                     {
@@ -10150,7 +9573,6 @@
     },
     "PEXPIRETIME": {
         "summary": "Returns the expiration time of a key as a Unix milliseconds timestamp.",
-        "since": "7.0.0",
         "group": "generic",
         "complexity": "O(1)",
         "acl_categories": [
@@ -10194,7 +9616,6 @@
     },
     "PFADD": {
         "summary": "Adds elements to a HyperLogLog key. Creates the key if it doesn't exist.",
-        "since": "2.8.9",
         "group": "hyperloglog",
         "complexity": "O(1) to add every element.",
         "acl_categories": [
@@ -10246,7 +9667,6 @@
     },
     "PFCOUNT": {
         "summary": "Returns the approximated cardinality of the set(s) observed by the HyperLogLog key(s).",
-        "since": "2.8.9",
         "group": "hyperloglog",
         "complexity": "O(1) with a very small average constant time when called with a single key. O(N) with N being the number of keys, and much bigger constant times, when called with multiple keys.",
         "acl_categories": [
@@ -10291,7 +9711,6 @@
     },
     "PFDEBUG": {
         "summary": "Internal commands for debugging HyperLogLog values.",
-        "since": "2.8.9",
         "group": "hyperloglog",
         "complexity": "N/A",
         "acl_categories": [
@@ -10346,7 +9765,6 @@
     },
     "PFMERGE": {
         "summary": "Merges one or more HyperLogLog values into a single key.",
-        "since": "2.8.9",
         "group": "hyperloglog",
         "complexity": "O(N) to merge N HyperLogLogs, but with high constant times.",
         "acl_categories": [
@@ -10417,7 +9835,6 @@
     },
     "PFSELFTEST": {
         "summary": "An internal command for testing HyperLogLog values.",
-        "since": "2.8.9",
         "group": "hyperloglog",
         "complexity": "N/A",
         "acl_categories": [
@@ -10436,7 +9853,6 @@
     },
     "PING": {
         "summary": "Returns the server's liveliness response.",
-        "since": "1.0.0",
         "group": "connection",
         "complexity": "O(1)",
         "acl_categories": [
@@ -10462,10 +9878,8 @@
     },
     "PSETEX": {
         "summary": "Sets both string value and expiration time in milliseconds of a key. The key is created if it doesn't exist.",
-        "since": "2.6.0",
         "group": "string",
         "complexity": "O(1)",
-        "deprecated_since": "2.6.12",
         "replaced_by": "`SET` with the `PX` argument",
         "acl_categories": [
             "@write",
@@ -10521,7 +9935,6 @@
     },
     "PSUBSCRIBE": {
         "summary": "Listens for messages published to channels that match one or more patterns.",
-        "since": "2.0.0",
         "group": "pubsub",
         "complexity": "O(N) where N is the number of patterns to subscribe to.",
         "acl_categories": [
@@ -10546,7 +9959,6 @@
     },
     "PSYNC": {
         "summary": "An internal command used in replication.",
-        "since": "2.8.0",
         "group": "server",
         "acl_categories": [
             "@admin",
@@ -10575,15 +9987,8 @@
     },
     "PTTL": {
         "summary": "Returns the expiration time in milliseconds of a key.",
-        "since": "2.6.0",
         "group": "generic",
         "complexity": "O(1)",
-        "history": [
-            [
-                "2.8.0",
-                "Added the -2 reply."
-            ]
-        ],
         "acl_categories": [
             "@keyspace",
             "@read",
@@ -10628,7 +10033,6 @@
     },
     "PUBLISH": {
         "summary": "Posts a message to a channel.",
-        "since": "2.0.0",
         "group": "pubsub",
         "complexity": "O(N+M) where N is the number of clients subscribed to the receiving channel and M is the total number of subscribed patterns (by any client).",
         "acl_categories": [
@@ -10657,7 +10061,6 @@
     },
     "PUBSUB": {
         "summary": "A container for Pub/Sub commands.",
-        "since": "2.8.0",
         "group": "pubsub",
         "complexity": "Depends on subcommand.",
         "acl_categories": [
@@ -10667,7 +10070,6 @@
     },
     "PUBSUB CHANNELS": {
         "summary": "Returns the active channels.",
-        "since": "2.8.0",
         "group": "pubsub",
         "complexity": "O(N) where N is the number of active channels, and assuming constant time pattern matching (relatively short channels and patterns)",
         "acl_categories": [
@@ -10691,7 +10093,6 @@
     },
     "PUBSUB HELP": {
         "summary": "Returns helpful text about the different subcommands.",
-        "since": "6.2.0",
         "group": "pubsub",
         "complexity": "O(1)",
         "acl_categories": [
@@ -10705,7 +10106,6 @@
     },
     "PUBSUB NUMPAT": {
         "summary": "Returns a count of unique pattern subscriptions.",
-        "since": "2.8.0",
         "group": "pubsub",
         "complexity": "O(1)",
         "acl_categories": [
@@ -10721,7 +10121,6 @@
     },
     "PUBSUB NUMSUB": {
         "summary": "Returns a count of subscribers to channels.",
-        "since": "2.8.0",
         "group": "pubsub",
         "complexity": "O(N) for the NUMSUB subcommand, where N is the number of requested channels",
         "acl_categories": [
@@ -10746,7 +10145,6 @@
     },
     "PUBSUB SHARDCHANNELS": {
         "summary": "Returns the active shard channels.",
-        "since": "7.0.0",
         "group": "pubsub",
         "complexity": "O(N) where N is the number of active shard channels, and assuming constant time pattern matching (relatively short shard channels).",
         "acl_categories": [
@@ -10770,7 +10168,6 @@
     },
     "PUBSUB SHARDNUMSUB": {
         "summary": "Returns the count of subscribers of shard channels.",
-        "since": "7.0.0",
         "group": "pubsub",
         "complexity": "O(N) for the SHARDNUMSUB subcommand, where N is the number of requested shard channels",
         "acl_categories": [
@@ -10795,7 +10192,6 @@
     },
     "PUNSUBSCRIBE": {
         "summary": "Stops listening to messages published to channels that match one or more patterns.",
-        "since": "2.0.0",
         "group": "pubsub",
         "complexity": "O(N) where N is the number of patterns to unsubscribe.",
         "acl_categories": [
@@ -10821,10 +10217,8 @@
     },
     "QUIT": {
         "summary": "Closes the connection.",
-        "since": "1.0.0",
         "group": "connection",
         "complexity": "O(1)",
-        "deprecated_since": "7.2.0",
         "replaced_by": "just closing the connection",
         "acl_categories": [
             "@fast",
@@ -10845,7 +10239,6 @@
     },
     "RANDOMKEY": {
         "summary": "Returns a random key name from the database.",
-        "since": "1.0.0",
         "group": "generic",
         "complexity": "O(1)",
         "acl_categories": [
@@ -10865,7 +10258,6 @@
     },
     "READONLY": {
         "summary": "Enables read-only queries for a connection to a Redis Cluster replica node.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(1)",
         "acl_categories": [
@@ -10881,7 +10273,6 @@
     },
     "READWRITE": {
         "summary": "Enables read-write queries for a connection to a Reids Cluster replica node.",
-        "since": "3.0.0",
         "group": "cluster",
         "complexity": "O(1)",
         "acl_categories": [
@@ -10897,7 +10288,6 @@
     },
     "RENAME": {
         "summary": "Renames a key and overwrites the destination.",
-        "since": "1.0.0",
         "group": "generic",
         "complexity": "O(1)",
         "acl_categories": [
@@ -10965,15 +10355,8 @@
     },
     "RENAMENX": {
         "summary": "Renames a key only when the target key name doesn't exist.",
-        "since": "1.0.0",
         "group": "generic",
         "complexity": "O(1)",
-        "history": [
-            [
-                "3.2.0",
-                "The command no longer returns an error when source and destination names are the same."
-            ]
-        ],
         "acl_categories": [
             "@keyspace",
             "@write",
@@ -11040,7 +10423,6 @@
     },
     "REPLCONF": {
         "summary": "An internal command for configuring the replication stream.",
-        "since": "3.0.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -11062,7 +10444,6 @@
     },
     "REPLICAOF": {
         "summary": "Configures a server as replica of another, or promotes it to a master.",
-        "since": "5.0.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -11122,7 +10503,6 @@
     },
     "RESET": {
         "summary": "Resets the connection.",
-        "since": "6.2.0",
         "group": "connection",
         "complexity": "O(1)",
         "acl_categories": [
@@ -11141,23 +10521,8 @@
     },
     "RESTORE": {
         "summary": "Creates a key from the serialized representation of a value.",
-        "since": "2.6.0",
         "group": "generic",
         "complexity": "O(1) to create the new key and additional O(N*M) to reconstruct the serialized value, where N is the number of Redis objects composing the value and M their average size. For small string values the time complexity is thus O(1)+O(1*M) where M is small, so simply O(1). However for sorted set values the complexity is O(N*M*log(N)) because inserting values into sorted sets is O(log(N)).",
-        "history": [
-            [
-                "3.0.0",
-                "Added the `REPLACE` modifier."
-            ],
-            [
-                "5.0.0",
-                "Added the `ABSTTL` modifier."
-            ],
-            [
-                "5.0.0",
-                "Added the `IDLETIME` and `FREQ` options."
-            ]
-        ],
         "acl_categories": [
             "@keyspace",
             "@write",
@@ -11207,7 +10572,6 @@
                 "type": "pure-token",
                 "display_text": "replace",
                 "token": "REPLACE",
-                "since": "3.0.0",
                 "optional": true
             },
             {
@@ -11215,7 +10579,6 @@
                 "type": "pure-token",
                 "display_text": "absttl",
                 "token": "ABSTTL",
-                "since": "5.0.0",
                 "optional": true
             },
             {
@@ -11223,7 +10586,6 @@
                 "type": "integer",
                 "display_text": "seconds",
                 "token": "IDLETIME",
-                "since": "5.0.0",
                 "optional": true
             },
             {
@@ -11231,7 +10593,6 @@
                 "type": "integer",
                 "display_text": "frequency",
                 "token": "FREQ",
-                "since": "5.0.0",
                 "optional": true
             }
         ],
@@ -11242,23 +10603,8 @@
     },
     "RESTORE-ASKING": {
         "summary": "An internal command for migrating keys in a cluster.",
-        "since": "3.0.0",
         "group": "server",
         "complexity": "O(1) to create the new key and additional O(N*M) to reconstruct the serialized value, where N is the number of Redis objects composing the value and M their average size. For small string values the time complexity is thus O(1)+O(1*M) where M is small, so simply O(1). However for sorted set values the complexity is O(N*M*log(N)) because inserting values into sorted sets is O(log(N)).",
-        "history": [
-            [
-                "3.0.0",
-                "Added the `REPLACE` modifier."
-            ],
-            [
-                "5.0.0",
-                "Added the `ABSTTL` modifier."
-            ],
-            [
-                "5.0.0",
-                "Added the `IDLETIME` and `FREQ` options."
-            ]
-        ],
         "acl_categories": [
             "@keyspace",
             "@write",
@@ -11308,7 +10654,6 @@
                 "type": "pure-token",
                 "display_text": "replace",
                 "token": "REPLACE",
-                "since": "3.0.0",
                 "optional": true
             },
             {
@@ -11316,7 +10661,6 @@
                 "type": "pure-token",
                 "display_text": "absttl",
                 "token": "ABSTTL",
-                "since": "5.0.0",
                 "optional": true
             },
             {
@@ -11324,7 +10668,6 @@
                 "type": "integer",
                 "display_text": "seconds",
                 "token": "IDLETIME",
-                "since": "5.0.0",
                 "optional": true
             },
             {
@@ -11332,7 +10675,6 @@
                 "type": "integer",
                 "display_text": "frequency",
                 "token": "FREQ",
-                "since": "5.0.0",
                 "optional": true
             }
         ],
@@ -11347,7 +10689,6 @@
     },
     "ROLE": {
         "summary": "Returns the replication role.",
-        "since": "2.8.12",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -11365,15 +10706,8 @@
     },
     "RPOP": {
         "summary": "Returns and removes the last elements of a list. Deletes the list if the last element was popped.",
-        "since": "1.0.0",
         "group": "list",
         "complexity": "O(N) where N is the number of elements returned",
-        "history": [
-            [
-                "6.2.0",
-                "Added the `count` argument."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@list",
@@ -11412,7 +10746,6 @@
                 "name": "count",
                 "type": "integer",
                 "display_text": "count",
-                "since": "6.2.0",
                 "optional": true
             }
         ],
@@ -11423,10 +10756,8 @@
     },
     "RPOPLPUSH": {
         "summary": "Returns the last element of a list after removing and pushing it to another list. Deletes the list if the last element was popped.",
-        "since": "1.2.0",
         "group": "list",
         "complexity": "O(1)",
-        "deprecated_since": "6.2.0",
         "replaced_by": "`LMOVE` with the `RIGHT` and `LEFT` arguments",
         "acl_categories": [
             "@write",
@@ -11497,15 +10828,8 @@
     },
     "RPUSH": {
         "summary": "Appends one or more elements to a list. Creates the key if it doesn't exist.",
-        "since": "1.0.0",
         "group": "list",
         "complexity": "O(1) for each element added, so O(N) to add N elements when the command is called with multiple arguments.",
-        "history": [
-            [
-                "2.4.0",
-                "Accepts multiple `element` arguments."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@list",
@@ -11554,15 +10878,8 @@
     },
     "RPUSHX": {
         "summary": "Appends an element to a list only when the list exists.",
-        "since": "2.2.0",
         "group": "list",
         "complexity": "O(1) for each element added, so O(N) to add N elements when the command is called with multiple arguments.",
-        "history": [
-            [
-                "4.0.0",
-                "Accepts multiple `element` arguments."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@list",
@@ -11611,15 +10928,8 @@
     },
     "SADD": {
         "summary": "Adds one or more members to a set. Creates the key if it doesn't exist.",
-        "since": "1.0.0",
         "group": "set",
         "complexity": "O(1) for each element added, so O(N) to add N elements when the command is called with multiple arguments.",
-        "history": [
-            [
-                "2.4.0",
-                "Accepts multiple `member` arguments."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@set",
@@ -11668,7 +10978,6 @@
     },
     "SAVE": {
         "summary": "Synchronously saves the database(s) to disk.",
-        "since": "1.0.0",
         "group": "server",
         "complexity": "O(N) where N is the total number of keys in all databases",
         "acl_categories": [
@@ -11686,15 +10995,8 @@
     },
     "SCAN": {
         "summary": "Iterates over the key names in the database.",
-        "since": "2.8.0",
         "group": "generic",
         "complexity": "O(1) for every call. O(N) for a complete iteration, including enough command calls for the cursor to return back to 0. N is the number of elements inside the collection.",
-        "history": [
-            [
-                "6.0.0",
-                "Added the `TYPE` subcommand."
-            ]
-        ],
         "acl_categories": [
             "@keyspace",
             "@read",
@@ -11726,7 +11028,6 @@
                 "type": "string",
                 "display_text": "type",
                 "token": "TYPE",
-                "since": "6.0.0",
                 "optional": true
             }
         ],
@@ -11741,7 +11042,6 @@
     },
     "SCARD": {
         "summary": "Returns the number of members in a set.",
-        "since": "1.0.0",
         "group": "set",
         "complexity": "O(1)",
         "acl_categories": [
@@ -11784,7 +11084,6 @@
     },
     "SCRIPT": {
         "summary": "A container for Lua scripts management commands.",
-        "since": "2.6.0",
         "group": "scripting",
         "complexity": "Depends on subcommand.",
         "acl_categories": [
@@ -11794,7 +11093,6 @@
     },
     "SCRIPT DEBUG": {
         "summary": "Sets the debug mode of server-side Lua scripts.",
-        "since": "3.2.0",
         "group": "scripting",
         "complexity": "O(1)",
         "acl_categories": [
@@ -11834,7 +11132,6 @@
     },
     "SCRIPT EXISTS": {
         "summary": "Determines whether server-side Lua scripts exist in the script cache.",
-        "since": "2.6.0",
         "group": "scripting",
         "complexity": "O(N) with N being the number of scripts to check (so checking a single script is an O(1) operation).",
         "acl_categories": [
@@ -11860,15 +11157,8 @@
     },
     "SCRIPT FLUSH": {
         "summary": "Removes all server-side Lua scripts from the script cache.",
-        "since": "2.6.0",
         "group": "scripting",
         "complexity": "O(N) with N being the number of scripts in cache",
-        "history": [
-            [
-                "6.2.0",
-                "Added the `ASYNC` and `SYNC` flushing mode modifiers."
-            ]
-        ],
         "acl_categories": [
             "@slow",
             "@scripting"
@@ -11878,7 +11168,6 @@
             {
                 "name": "flush-type",
                 "type": "oneof",
-                "since": "6.2.0",
                 "optional": true,
                 "arguments": [
                     {
@@ -11906,7 +11195,6 @@
     },
     "SCRIPT HELP": {
         "summary": "Returns helpful text about the different subcommands.",
-        "since": "5.0.0",
         "group": "scripting",
         "complexity": "O(1)",
         "acl_categories": [
@@ -11921,7 +11209,6 @@
     },
     "SCRIPT KILL": {
         "summary": "Terminates a server-side Lua script during execution.",
-        "since": "2.6.0",
         "group": "scripting",
         "complexity": "O(1)",
         "acl_categories": [
@@ -11940,7 +11227,6 @@
     },
     "SCRIPT LOAD": {
         "summary": "Loads a server-side Lua script to the script cache.",
-        "since": "2.6.0",
         "group": "scripting",
         "complexity": "O(N) with N being the length in bytes of the script body.",
         "acl_categories": [
@@ -11966,7 +11252,6 @@
     },
     "SDIFF": {
         "summary": "Returns the difference of multiple sets.",
-        "since": "1.0.0",
         "group": "set",
         "complexity": "O(N) where N is the total number of elements in all given sets.",
         "acl_categories": [
@@ -12013,7 +11298,6 @@
     },
     "SDIFFSTORE": {
         "summary": "Stores the difference of multiple sets in a key.",
-        "since": "1.0.0",
         "group": "set",
         "complexity": "O(N) where N is the total number of elements in all given sets.",
         "acl_categories": [
@@ -12082,7 +11366,6 @@
     },
     "SELECT": {
         "summary": "Changes the selected database.",
-        "since": "1.0.0",
         "group": "connection",
         "complexity": "O(1)",
         "acl_categories": [
@@ -12105,27 +11388,8 @@
     },
     "SET": {
         "summary": "Sets the string value of a key, ignoring its type. The key is created if it doesn't exist.",
-        "since": "1.0.0",
         "group": "string",
         "complexity": "O(1)",
-        "history": [
-            [
-                "2.6.12",
-                "Added the `EX`, `PX`, `NX` and `XX` options."
-            ],
-            [
-                "6.0.0",
-                "Added the `KEEPTTL` option."
-            ],
-            [
-                "6.2.0",
-                "Added the `GET`, `EXAT` and `PXAT` option."
-            ],
-            [
-                "7.0.0",
-                "Allowed the `NX` and `GET` options to be used together."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@string",
@@ -12170,7 +11434,6 @@
             {
                 "name": "condition",
                 "type": "oneof",
-                "since": "2.6.12",
                 "optional": true,
                 "arguments": [
                     {
@@ -12192,7 +11455,6 @@
                 "type": "pure-token",
                 "display_text": "get",
                 "token": "GET",
-                "since": "6.2.0",
                 "optional": true
             },
             {
@@ -12204,36 +11466,31 @@
                         "name": "seconds",
                         "type": "integer",
                         "display_text": "seconds",
-                        "token": "EX",
-                        "since": "2.6.12"
+                        "token": "EX"
                     },
                     {
                         "name": "milliseconds",
                         "type": "integer",
                         "display_text": "milliseconds",
-                        "token": "PX",
-                        "since": "2.6.12"
+                        "token": "PX"
                     },
                     {
                         "name": "unix-time-seconds",
                         "type": "unix-time",
                         "display_text": "unix-time-seconds",
-                        "token": "EXAT",
-                        "since": "6.2.0"
+                        "token": "EXAT"
                     },
                     {
                         "name": "unix-time-milliseconds",
                         "type": "unix-time",
                         "display_text": "unix-time-milliseconds",
-                        "token": "PXAT",
-                        "since": "6.2.0"
+                        "token": "PXAT"
                     },
                     {
                         "name": "keepttl",
                         "type": "pure-token",
                         "display_text": "keepttl",
                         "token": "KEEPTTL",
-                        "since": "6.0.0"
                     }
                 ]
             }
@@ -12245,7 +11502,6 @@
     },
     "SETBIT": {
         "summary": "Sets or clears the bit at offset of the string value. Creates the key if it doesn't exist.",
-        "since": "2.2.0",
         "group": "bitmap",
         "complexity": "O(1)",
         "acl_categories": [
@@ -12300,10 +11556,8 @@
     },
     "SETEX": {
         "summary": "Sets the string value and expiration time of a key. Creates the key if it doesn't exist.",
-        "since": "2.0.0",
         "group": "string",
         "complexity": "O(1)",
-        "deprecated_since": "2.6.12",
         "replaced_by": "`SET` with the `EX` argument",
         "acl_categories": [
             "@write",
@@ -12359,10 +11613,8 @@
     },
     "SETNX": {
         "summary": "Set the string value of a key only when the key doesn't exist.",
-        "since": "1.0.0",
         "group": "string",
         "complexity": "O(1)",
-        "deprecated_since": "2.6.12",
         "replaced_by": "`SET` with the `NX` argument",
         "acl_categories": [
             "@write",
@@ -12414,7 +11666,6 @@
     },
     "SETRANGE": {
         "summary": "Overwrites a part of a string value with another by an offset. Creates the key if it doesn't exist.",
-        "since": "2.2.0",
         "group": "string",
         "complexity": "O(1), not counting the time taken to copy the new string in place. Usually, this string is very small so the amortized complexity is O(1). Otherwise, complexity is O(M) with M being the length of the value argument.",
         "acl_categories": [
@@ -12468,15 +11719,8 @@
     },
     "SHUTDOWN": {
         "summary": "Synchronously saves the database(s) to disk and shuts down the Redis server.",
-        "since": "1.0.0",
         "group": "server",
         "complexity": "O(N) when saving, where N is the total number of keys in all databases when saving data, otherwise O(1)",
-        "history": [
-            [
-                "7.0.0",
-                "Added the `NOW`, `FORCE` and `ABORT` modifiers."
-            ]
-        ],
         "acl_categories": [
             "@admin",
             "@slow",
@@ -12508,7 +11752,6 @@
                 "type": "pure-token",
                 "display_text": "now",
                 "token": "NOW",
-                "since": "7.0.0",
                 "optional": true
             },
             {
@@ -12516,7 +11759,6 @@
                 "type": "pure-token",
                 "display_text": "force",
                 "token": "FORCE",
-                "since": "7.0.0",
                 "optional": true
             },
             {
@@ -12524,7 +11766,6 @@
                 "type": "pure-token",
                 "display_text": "abort",
                 "token": "ABORT",
-                "since": "7.0.0",
                 "optional": true
             }
         ],
@@ -12539,7 +11780,6 @@
     },
     "SINTER": {
         "summary": "Returns the intersect of multiple sets.",
-        "since": "1.0.0",
         "group": "set",
         "complexity": "O(N*M) worst case where N is the cardinality of the smallest set and M is the number of sets.",
         "acl_categories": [
@@ -12586,7 +11826,6 @@
     },
     "SINTERCARD": {
         "summary": "Returns the number of members of the intersect of multiple sets.",
-        "since": "7.0.0",
         "group": "set",
         "complexity": "O(N*M) worst case where N is the cardinality of the smallest set and M is the number of sets.",
         "acl_categories": [
@@ -12643,7 +11882,6 @@
     },
     "SINTERSTORE": {
         "summary": "Stores the intersect of multiple sets in a key.",
-        "since": "1.0.0",
         "group": "set",
         "complexity": "O(N*M) worst case where N is the cardinality of the smallest set and M is the number of sets.",
         "acl_categories": [
@@ -12712,7 +11950,6 @@
     },
     "SISMEMBER": {
         "summary": "Determines whether a member belongs to a set.",
-        "since": "1.0.0",
         "group": "set",
         "complexity": "O(1)",
         "acl_categories": [
@@ -12760,10 +11997,8 @@
     },
     "SLAVEOF": {
         "summary": "Sets a Redis server as a replica of another, or promotes it to being a master.",
-        "since": "1.0.0",
         "group": "server",
         "complexity": "O(1)",
-        "deprecated_since": "5.0.0",
         "replaced_by": "`REPLICAOF`",
         "acl_categories": [
             "@admin",
@@ -12825,7 +12060,6 @@
     },
     "SLOWLOG": {
         "summary": "A container for slow log commands.",
-        "since": "2.2.12",
         "group": "server",
         "complexity": "Depends on subcommand.",
         "acl_categories": [
@@ -12835,15 +12069,8 @@
     },
     "SLOWLOG GET": {
         "summary": "Returns the slow log's entries.",
-        "since": "2.2.12",
         "group": "server",
         "complexity": "O(N) where N is the number of entries returned",
-        "history": [
-            [
-                "4.0.0",
-                "Added client IP address, port and name to the reply."
-            ]
-        ],
         "acl_categories": [
             "@admin",
             "@slow",
@@ -12870,7 +12097,6 @@
     },
     "SLOWLOG HELP": {
         "summary": "Show helpful text about the different subcommands",
-        "since": "6.2.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -12884,7 +12110,6 @@
     },
     "SLOWLOG LEN": {
         "summary": "Returns the number of entries in the slow log.",
-        "since": "2.2.12",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -12906,7 +12131,6 @@
     },
     "SLOWLOG RESET": {
         "summary": "Clears all entries from the slow log.",
-        "since": "2.2.12",
         "group": "server",
         "complexity": "O(N) where N is the number of entries in the slowlog",
         "acl_categories": [
@@ -12927,7 +12151,6 @@
     },
     "SMEMBERS": {
         "summary": "Returns all members of a set.",
-        "since": "1.0.0",
         "group": "set",
         "complexity": "O(N) where N is the set cardinality.",
         "acl_categories": [
@@ -12973,7 +12196,6 @@
     },
     "SMISMEMBER": {
         "summary": "Determines whether multiple members belong to a set.",
-        "since": "6.2.0",
         "group": "set",
         "complexity": "O(N) where N is the number of elements being checked for membership",
         "acl_categories": [
@@ -13023,7 +12245,6 @@
     },
     "SMOVE": {
         "summary": "Moves a member from one set to another.",
-        "since": "1.0.0",
         "group": "set",
         "complexity": "O(1)",
         "acl_categories": [
@@ -13097,7 +12318,6 @@
     },
     "SORT": {
         "summary": "Sorts the elements in a list, a set, or a sorted set, optionally storing the result.",
-        "since": "1.0.0",
         "group": "generic",
         "complexity": "O(N+M*log(M)) where N is the number of elements in the list or set to sort, and M the number of returned elements. When the elements are not sorted, complexity is O(N).",
         "acl_categories": [
@@ -13241,7 +12461,6 @@
     },
     "SORT_RO": {
         "summary": "Returns the sorted elements of a list, a set, or a sorted set.",
-        "since": "7.0.0",
         "group": "generic",
         "complexity": "O(N+M*log(M)) where N is the number of elements in the list or set to sort, and M the number of returned elements. When the elements are not sorted, complexity is O(N).",
         "acl_categories": [
@@ -13363,15 +12582,8 @@
     },
     "SPOP": {
         "summary": "Returns one or more random members from a set after removing them. Deletes the set if the last member was popped.",
-        "since": "1.0.0",
         "group": "set",
         "complexity": "Without the count argument O(1), otherwise O(N) where N is the value of the passed count.",
-        "history": [
-            [
-                "3.2.0",
-                "Added the `count` argument."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@set",
@@ -13410,7 +12622,6 @@
                 "name": "count",
                 "type": "integer",
                 "display_text": "count",
-                "since": "3.2.0",
                 "optional": true
             }
         ],
@@ -13424,7 +12635,6 @@
     },
     "SPUBLISH": {
         "summary": "Post a message to a shard channel",
-        "since": "7.0.0",
         "group": "pubsub",
         "complexity": "O(N) where N is the number of clients subscribed to the receiving shard channel.",
         "acl_categories": [
@@ -13472,15 +12682,8 @@
     },
     "SRANDMEMBER": {
         "summary": "Get one or multiple random members from a set",
-        "since": "1.0.0",
         "group": "set",
         "complexity": "Without the count argument O(1), otherwise O(N) where N is the absolute value of the passed count.",
-        "history": [
-            [
-                "2.6.0",
-                "Added the optional `count` argument."
-            ]
-        ],
         "acl_categories": [
             "@read",
             "@set",
@@ -13518,7 +12721,6 @@
                 "name": "count",
                 "type": "integer",
                 "display_text": "count",
-                "since": "2.6.0",
                 "optional": true
             }
         ],
@@ -13531,15 +12733,8 @@
     },
     "SREM": {
         "summary": "Removes one or more members from a set. Deletes the set if the last member was removed.",
-        "since": "1.0.0",
         "group": "set",
         "complexity": "O(N) where N is the number of members to be removed.",
-        "history": [
-            [
-                "2.4.0",
-                "Accepts multiple `member` arguments."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@set",
@@ -13587,7 +12782,6 @@
     },
     "SSCAN": {
         "summary": "Iterates over members of a set.",
-        "since": "2.8.0",
         "group": "set",
         "complexity": "O(1) for every call. O(N) for a complete iteration, including enough command calls for the cursor to return back to 0. N is the number of elements inside the collection.",
         "acl_categories": [
@@ -13652,7 +12846,6 @@
     },
     "SSUBSCRIBE": {
         "summary": "Listens for messages published to shard channels.",
-        "since": "7.0.0",
         "group": "pubsub",
         "complexity": "O(N) where N is the number of shard channels to subscribe to.",
         "acl_categories": [
@@ -13696,7 +12889,6 @@
     },
     "STRLEN": {
         "summary": "Returns the length of a string value.",
-        "since": "2.2.0",
         "group": "string",
         "complexity": "O(1)",
         "acl_categories": [
@@ -13739,7 +12931,6 @@
     },
     "SUBSCRIBE": {
         "summary": "Listens for messages published to channels.",
-        "since": "2.0.0",
         "group": "pubsub",
         "complexity": "O(N) where N is the number of channels to subscribe to.",
         "acl_categories": [
@@ -13764,10 +12955,8 @@
     },
     "SUBSTR": {
         "summary": "Returns a substring from a string value.",
-        "since": "1.0.0",
         "group": "string",
         "complexity": "O(N) where N is the length of the returned string. The complexity is ultimately determined by the returned length, but because creating a substring from an existing string is very cheap, it can be considered O(1) for small strings.",
-        "deprecated_since": "2.0.0",
         "replaced_by": "`GETRANGE`",
         "acl_categories": [
             "@read",
@@ -13822,7 +13011,6 @@
     },
     "SUNION": {
         "summary": "Returns the union of multiple sets.",
-        "since": "1.0.0",
         "group": "set",
         "complexity": "O(N) where N is the total number of elements in all given sets.",
         "acl_categories": [
@@ -13869,7 +13057,6 @@
     },
     "SUNIONSTORE": {
         "summary": "Stores the union of multiple sets in a key.",
-        "since": "1.0.0",
         "group": "set",
         "complexity": "O(N) where N is the total number of elements in all given sets.",
         "acl_categories": [
@@ -13938,7 +13125,6 @@
     },
     "SUNSUBSCRIBE": {
         "summary": "Stops listening to messages posted to shard channels.",
-        "since": "7.0.0",
         "group": "pubsub",
         "complexity": "O(N) where N is the number of shard channels to unsubscribe.",
         "acl_categories": [
@@ -13983,7 +13169,6 @@
     },
     "SWAPDB": {
         "summary": "Swaps two Redis databases.",
-        "since": "4.0.0",
         "group": "server",
         "complexity": "O(N) where N is the count of clients watching or blocking on keys from both databases.",
         "acl_categories": [
@@ -14012,7 +13197,6 @@
     },
     "SYNC": {
         "summary": "An internal command used in replication.",
-        "since": "1.0.0",
         "group": "server",
         "acl_categories": [
             "@admin",
@@ -14029,7 +13213,6 @@
     },
     "TIME": {
         "summary": "Returns the server time.",
-        "since": "2.6.0",
         "group": "server",
         "complexity": "O(1)",
         "acl_categories": [
@@ -14047,7 +13230,6 @@
     },
     "TOUCH": {
         "summary": "Returns the number of existing keys out of those specified after updating the time they were last accessed.",
-        "since": "3.2.1",
         "group": "generic",
         "complexity": "O(N) where N is the number of keys that will be touched.",
         "acl_categories": [
@@ -14095,15 +13277,8 @@
     },
     "TTL": {
         "summary": "Returns the expiration time in seconds of a key.",
-        "since": "1.0.0",
         "group": "generic",
         "complexity": "O(1)",
-        "history": [
-            [
-                "2.8.0",
-                "Added the -2 reply."
-            ]
-        ],
         "acl_categories": [
             "@keyspace",
             "@read",
@@ -14148,7 +13323,6 @@
     },
     "TYPE": {
         "summary": "Determines the type of value stored at a key.",
-        "since": "1.0.0",
         "group": "generic",
         "complexity": "O(1)",
         "acl_categories": [
@@ -14191,7 +13365,6 @@
     },
     "UNLINK": {
         "summary": "Asynchronously deletes one or more keys.",
-        "since": "4.0.0",
         "group": "generic",
         "complexity": "O(1) for each key removed regardless of its size. Then the command does O(N) work in a different thread in order to reclaim memory, where N is the number of allocations the deleted objects where composed of.",
         "acl_categories": [
@@ -14240,7 +13413,6 @@
     },
     "UNSUBSCRIBE": {
         "summary": "Stops listening to messages posted to channels.",
-        "since": "2.0.0",
         "group": "pubsub",
         "complexity": "O(N) where N is the number of channels to unsubscribe.",
         "acl_categories": [
@@ -14266,7 +13438,6 @@
     },
     "UNWATCH": {
         "summary": "Forgets about watched keys of a transaction.",
-        "since": "2.2.0",
         "group": "transactions",
         "complexity": "O(1)",
         "acl_categories": [
@@ -14284,7 +13455,6 @@
     },
     "WAIT": {
         "summary": "Blocks until the asynchronous replication of all preceding write commands sent by the connection is completed.",
-        "since": "3.0.0",
         "group": "generic",
         "complexity": "O(1)",
         "acl_categories": [
@@ -14311,7 +13481,6 @@
     },
     "WAITAOF": {
         "summary": "Blocks until all of the preceding write commands sent by the connection are written to the append-only file of the master and/or replicas.",
-        "since": "7.2.0",
         "group": "generic",
         "complexity": "O(1)",
         "acl_categories": [
@@ -14346,7 +13515,6 @@
     },
     "WATCH": {
         "summary": "Monitors changes to keys to determine the execution of a transaction.",
-        "since": "2.2.0",
         "group": "transactions",
         "complexity": "O(1) for every key.",
         "acl_categories": [
@@ -14392,7 +13560,6 @@
     },
     "XACK": {
         "summary": "Returns the number of messages that were successfully acknowledged by the consumer group member of a stream.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(1) for each message ID processed.",
         "acl_categories": [
@@ -14447,19 +13614,8 @@
     },
     "XADD": {
         "summary": "Appends a new message to a stream. Creates the key if it doesn't exist.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(1) when adding a new entry, O(N) when trimming where N being the number of entries evicted.",
-        "history": [
-            [
-                "6.2.0",
-                "Added the `NOMKSTREAM` option, `MINID` trimming strategy and the `LIMIT` option."
-            ],
-            [
-                "7.0.0",
-                "Added support for the `<ms>-*` explicit ID form."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@stream",
@@ -14499,7 +13655,6 @@
                 "type": "pure-token",
                 "display_text": "nomkstream",
                 "token": "NOMKSTREAM",
-                "since": "6.2.0",
                 "optional": true
             },
             {
@@ -14521,8 +13676,7 @@
                                 "name": "minid",
                                 "type": "pure-token",
                                 "display_text": "minid",
-                                "token": "MINID",
-                                "since": "6.2.0"
+                                "token": "MINID"
                             }
                         ]
                     },
@@ -14555,7 +13709,6 @@
                         "type": "integer",
                         "display_text": "count",
                         "token": "LIMIT",
-                        "since": "6.2.0",
                         "optional": true
                     }
                 ]
@@ -14606,15 +13759,8 @@
     },
     "XAUTOCLAIM": {
         "summary": "Changes, or acquires, ownership of messages in a consumer group, as if the messages were delivered to as consumer group member.",
-        "since": "6.2.0",
         "group": "stream",
         "complexity": "O(1) if COUNT is small.",
-        "history": [
-            [
-                "7.0.0",
-                "Added an element to the reply array, containing deleted entries the command cleared from the PEL"
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@stream",
@@ -14693,7 +13839,6 @@
     },
     "XCLAIM": {
         "summary": "Changes, or acquires, ownership of a message in a consumer group, as if the message was delivered a consumer group member.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(log N) with N being the number of messages in the PEL of the consumer group.",
         "acl_categories": [
@@ -14803,7 +13948,6 @@
     },
     "XDEL": {
         "summary": "Returns the number of messages after removing them from a stream.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(1) for each single item to delete in the stream, regardless of the stream size.",
         "acl_categories": [
@@ -14853,7 +13997,6 @@
     },
     "XGROUP": {
         "summary": "A container for consumer groups commands.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "Depends on subcommand.",
         "acl_categories": [
@@ -14863,15 +14006,8 @@
     },
     "XGROUP CREATE": {
         "summary": "Creates a consumer group.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(1)",
-        "history": [
-            [
-                "7.0.0",
-                "Added the `entries_read` named argument."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@stream",
@@ -14949,7 +14085,6 @@
     },
     "XGROUP CREATECONSUMER": {
         "summary": "Creates a consumer in a consumer group.",
-        "since": "6.2.0",
         "group": "stream",
         "complexity": "O(1)",
         "acl_categories": [
@@ -15003,7 +14138,6 @@
     },
     "XGROUP DELCONSUMER": {
         "summary": "Deletes a consumer from a consumer group.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(1)",
         "acl_categories": [
@@ -15056,7 +14190,6 @@
     },
     "XGROUP DESTROY": {
         "summary": "Destroys a consumer group.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(N) where N is the number of entries in the group's pending entries list (PEL).",
         "acl_categories": [
@@ -15104,7 +14237,6 @@
     },
     "XGROUP HELP": {
         "summary": "Returns helpful text about the different subcommands.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(1)",
         "acl_categories": [
@@ -15119,15 +14251,8 @@
     },
     "XGROUP SETID": {
         "summary": "Sets the last-delivered ID of a consumer group.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(1)",
-        "history": [
-            [
-                "7.0.0",
-                "Added the optional `entries_read` argument."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@stream",
@@ -15197,7 +14322,6 @@
     },
     "XINFO": {
         "summary": "A container for stream introspection commands.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "Depends on subcommand.",
         "acl_categories": [
@@ -15207,15 +14331,8 @@
     },
     "XINFO CONSUMERS": {
         "summary": "Returns a list of the consumers in a consumer group.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(1)",
-        "history": [
-            [
-                "7.2.0",
-                "Added the `inactive` field."
-            ]
-        ],
         "acl_categories": [
             "@read",
             "@stream",
@@ -15264,15 +14381,8 @@
     },
     "XINFO GROUPS": {
         "summary": "Returns a list of the consumer groups of a stream.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(1)",
-        "history": [
-            [
-                "7.0.0",
-                "Added the `entries-read` and `lag` fields"
-            ]
-        ],
         "acl_categories": [
             "@read",
             "@stream",
@@ -15313,7 +14423,6 @@
     },
     "XINFO HELP": {
         "summary": "Returns helpful text about the different subcommands.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(1)",
         "acl_categories": [
@@ -15328,23 +14437,8 @@
     },
     "XINFO STREAM": {
         "summary": "Returns information about a stream.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(1)",
-        "history": [
-            [
-                "6.0.0",
-                "Added the `FULL` modifier."
-            ],
-            [
-                "7.0.0",
-                "Added the `max-deleted-entry-id`, `entries-added`, `recorded-first-entry-id`, `entries-read` and `lag` fields"
-            ],
-            [
-                "7.2.0",
-                "Added the `active-time` field, and changed the meaning of `seen-time`."
-            ]
-        ],
         "acl_categories": [
             "@read",
             "@stream",
@@ -15405,7 +14499,6 @@
     },
     "XLEN": {
         "summary": "Return the number of messages in a stream.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(1)",
         "acl_categories": [
@@ -15448,15 +14541,8 @@
     },
     "XPENDING": {
         "summary": "Returns the information and entries from a stream consumer group's pending entries list.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(N) with N being the number of elements returned, so asking for a small fixed number of entries per call is O(1). O(M), where M is the total number of entries scanned when used with the IDLE filter. When the command returns just the summary and the list of consumers is small, it runs in O(1) time; otherwise, an additional O(N) time for iterating every consumer.",
-        "history": [
-            [
-                "6.2.0",
-                "Added the `IDLE` option and exclusive range intervals."
-            ]
-        ],
         "acl_categories": [
             "@read",
             "@stream",
@@ -15505,7 +14591,6 @@
                         "type": "integer",
                         "display_text": "min-idle-time",
                         "token": "IDLE",
-                        "since": "6.2.0",
                         "optional": true
                     },
                     {
@@ -15541,15 +14626,8 @@
     },
     "XRANGE": {
         "summary": "Returns the messages from a stream within a range of IDs.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(N) with N being the number of elements being returned. If N is constant (e.g. always asking for the first 10 elements with COUNT), you can consider it O(1).",
-        "history": [
-            [
-                "6.2.0",
-                "Added exclusive ranges."
-            ]
-        ],
         "acl_categories": [
             "@read",
             "@stream",
@@ -15607,7 +14685,6 @@
     },
     "XREAD": {
         "summary": "Returns messages from multiple streams with IDs greater than the ones requested. Blocks until a message is available otherwise.",
-        "since": "5.0.0",
         "group": "stream",
         "acl_categories": [
             "@read",
@@ -15681,7 +14758,6 @@
     },
     "XREADGROUP": {
         "summary": "Returns new or historical messages from a stream for a consumer in a group. Blocks until a message is available otherwise.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "For each stream mentioned: O(M) with M being the number of elements returned. If M is constant (e.g. always asking for the first 10 elements with COUNT), you can consider it O(1). On the other side when XREADGROUP blocks, XADD will pay the O(N) time in order to serve the N clients blocked on the stream getting new data.",
         "acl_categories": [
@@ -15780,15 +14856,8 @@
     },
     "XREVRANGE": {
         "summary": "Returns the messages from a stream within a range of IDs in reverse order.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(N) with N being the number of elements returned. If N is constant (e.g. always asking for the first 10 elements with COUNT), you can consider it O(1).",
-        "history": [
-            [
-                "6.2.0",
-                "Added exclusive ranges."
-            ]
-        ],
         "acl_categories": [
             "@read",
             "@stream",
@@ -15846,15 +14915,8 @@
     },
     "XSETID": {
         "summary": "An internal command for replicating stream values.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(1)",
-        "history": [
-            [
-                "7.0.0",
-                "Added the `entries_added` and `max_deleted_entry_id` arguments."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@stream",
@@ -15898,7 +14960,6 @@
                 "type": "integer",
                 "display_text": "entries-added",
                 "token": "ENTRIESADDED",
-                "since": "7.0.0",
                 "optional": true
             },
             {
@@ -15906,7 +14967,6 @@
                 "type": "string",
                 "display_text": "max-deleted-id",
                 "token": "MAXDELETEDID",
-                "since": "7.0.0",
                 "optional": true
             }
         ],
@@ -15918,15 +14978,8 @@
     },
     "XTRIM": {
         "summary": "Deletes messages from the beginning of a stream.",
-        "since": "5.0.0",
         "group": "stream",
         "complexity": "O(N), with N being the number of evicted entries. Constant times are very small however, since entries are organized in macro nodes containing multiple entries that can be released with a single deallocation.",
-        "history": [
-            [
-                "6.2.0",
-                "Added the `MINID` trimming strategy and the `LIMIT` option."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@stream",
@@ -15978,8 +15031,7 @@
                                 "name": "minid",
                                 "type": "pure-token",
                                 "display_text": "minid",
-                                "token": "MINID",
-                                "since": "6.2.0"
+                                "token": "MINID"
                             }
                         ]
                     },
@@ -16012,7 +15064,6 @@
                         "type": "integer",
                         "display_text": "count",
                         "token": "LIMIT",
-                        "since": "6.2.0",
                         "optional": true
                     }
                 ]
@@ -16027,23 +15078,8 @@
     },
     "ZADD": {
         "summary": "Adds one or more members to a sorted set, or updates their scores. Creates the key if it doesn't exist.",
-        "since": "1.2.0",
         "group": "sorted-set",
         "complexity": "O(log(N)) for each item added, where N is the number of elements in the sorted set.",
-        "history": [
-            [
-                "2.4.0",
-                "Accepts multiple elements."
-            ],
-            [
-                "3.0.2",
-                "Added the `XX`, `NX`, `CH` and `INCR` options."
-            ],
-            [
-                "6.2.0",
-                "Added the `GT` and `LT` options."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@sortedset",
@@ -16080,7 +15116,6 @@
             {
                 "name": "condition",
                 "type": "oneof",
-                "since": "3.0.2",
                 "optional": true,
                 "arguments": [
                     {
@@ -16100,7 +15135,6 @@
             {
                 "name": "comparison",
                 "type": "oneof",
-                "since": "6.2.0",
                 "optional": true,
                 "arguments": [
                     {
@@ -16122,7 +15156,6 @@
                 "type": "pure-token",
                 "display_text": "change",
                 "token": "CH",
-                "since": "3.0.2",
                 "optional": true
             },
             {
@@ -16130,7 +15163,6 @@
                 "type": "pure-token",
                 "display_text": "increment",
                 "token": "INCR",
-                "since": "3.0.2",
                 "optional": true
             },
             {
@@ -16159,7 +15191,6 @@
     },
     "ZCARD": {
         "summary": "Returns the number of members in a sorted set.",
-        "since": "1.2.0",
         "group": "sorted-set",
         "complexity": "O(1)",
         "acl_categories": [
@@ -16202,7 +15233,6 @@
     },
     "ZCOUNT": {
         "summary": "Returns the count of members in a sorted set that have scores within a range.",
-        "since": "2.0.0",
         "group": "sorted-set",
         "complexity": "O(log(N)) with N being the number of elements in the sorted set.",
         "acl_categories": [
@@ -16256,7 +15286,6 @@
     },
     "ZDIFF": {
         "summary": "Returns the difference between multiple sorted sets.",
-        "since": "6.2.0",
         "group": "sorted-set",
         "complexity": "O(L + (N-K)log(N)) worst case where L is the total number of elements in all the sets, N is the size of the first set, and K is the size of the result set.",
         "acl_categories": [
@@ -16313,7 +15342,6 @@
     },
     "ZDIFFSTORE": {
         "summary": "Stores the difference of multiple sorted sets in a key.",
-        "since": "6.2.0",
         "group": "sorted-set",
         "complexity": "O(L + (N-K)log(N)) worst case where L is the total number of elements in all the sets, N is the size of the first set, and K is the size of the result set.",
         "acl_categories": [
@@ -16388,7 +15416,6 @@
     },
     "ZINCRBY": {
         "summary": "Increments the score of a member in a sorted set.",
-        "since": "1.2.0",
         "group": "sorted-set",
         "complexity": "O(log(N)) where N is the number of elements in the sorted set.",
         "acl_categories": [
@@ -16444,7 +15471,6 @@
     },
     "ZINTER": {
         "summary": "Returns the intersect of multiple sorted sets.",
-        "since": "6.2.0",
         "group": "sorted-set",
         "complexity": "O(N*K)+O(M*log(M)) worst case with N being the smallest input sorted set, K being the number of input sorted sets and M being the number of elements in the resulting sorted set.",
         "acl_categories": [
@@ -16535,7 +15561,6 @@
     },
     "ZINTERCARD": {
         "summary": "Returns the number of members of the intersect of multiple sorted sets.",
-        "since": "7.0.0",
         "group": "sorted-set",
         "complexity": "O(N*K) worst case with N being the smallest input sorted set, K being the number of input sorted sets.",
         "acl_categories": [
@@ -16592,7 +15617,6 @@
     },
     "ZINTERSTORE": {
         "summary": "Stores the intersect of multiple sorted sets in a key.",
-        "since": "2.0.0",
         "group": "sorted-set",
         "complexity": "O(N*K)+O(M*log(M)) worst case with N being the smallest input sorted set, K being the number of input sorted sets and M being the number of elements in the resulting sorted set.",
         "acl_categories": [
@@ -16701,7 +15725,6 @@
     },
     "ZLEXCOUNT": {
         "summary": "Returns the number of members in a sorted set within a lexicographical range.",
-        "since": "2.8.9",
         "group": "sorted-set",
         "complexity": "O(log(N)) with N being the number of elements in the sorted set.",
         "acl_categories": [
@@ -16755,7 +15778,6 @@
     },
     "ZMPOP": {
         "summary": "Returns the highest- or lowest-scoring members from one or more sorted sets after removing them. Deletes the sorted set if the last member was popped.",
-        "since": "7.0.0",
         "group": "sorted-set",
         "complexity": "O(K) + O(M*log(N)) where K is the number of provided keys, N being the number of elements in the sorted set, and M being the number of elements popped.",
         "acl_categories": [
@@ -16831,7 +15853,6 @@
     },
     "ZMSCORE": {
         "summary": "Returns the score of one or more members in a sorted set.",
-        "since": "6.2.0",
         "group": "sorted-set",
         "complexity": "O(N) where N is the number of members being requested.",
         "acl_categories": [
@@ -16881,7 +15902,6 @@
     },
     "ZPOPMAX": {
         "summary": "Returns the highest-scoring members from a sorted set after removing them. Deletes the sorted set if the last member was popped.",
-        "since": "5.0.0",
         "group": "sorted-set",
         "complexity": "O(log(N)*M) with N being the number of elements in the sorted set, and M being the number of elements popped.",
         "acl_categories": [
@@ -16932,7 +15952,6 @@
     },
     "ZPOPMIN": {
         "summary": "Returns the lowest-scoring members from a sorted set after removing them. Deletes the sorted set if the last member was popped.",
-        "since": "5.0.0",
         "group": "sorted-set",
         "complexity": "O(log(N)*M) with N being the number of elements in the sorted set, and M being the number of elements popped.",
         "acl_categories": [
@@ -16983,7 +16002,6 @@
     },
     "ZRANDMEMBER": {
         "summary": "Returns one or more random members from a sorted set.",
-        "since": "6.2.0",
         "group": "sorted-set",
         "complexity": "O(N) where N is the number of members returned",
         "acl_categories": [
@@ -17048,15 +16066,8 @@
     },
     "ZRANGE": {
         "summary": "Returns members in a sorted set within a range of indexes.",
-        "since": "1.2.0",
         "group": "sorted-set",
         "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements returned.",
-        "history": [
-            [
-                "6.2.0",
-                "Added the `REV`, `BYSCORE`, `BYLEX` and `LIMIT` options."
-            ]
-        ],
         "acl_categories": [
             "@read",
             "@sortedset",
@@ -17103,7 +16114,6 @@
             {
                 "name": "sortby",
                 "type": "oneof",
-                "since": "6.2.0",
                 "optional": true,
                 "arguments": [
                     {
@@ -17125,14 +16135,12 @@
                 "type": "pure-token",
                 "display_text": "rev",
                 "token": "REV",
-                "since": "6.2.0",
                 "optional": true
             },
             {
                 "name": "limit",
                 "type": "block",
                 "token": "LIMIT",
-                "since": "6.2.0",
                 "optional": true,
                 "arguments": [
                     {
@@ -17161,10 +16169,8 @@
     },
     "ZRANGEBYLEX": {
         "summary": "Returns members in a sorted set within a lexicographical range.",
-        "since": "2.8.9",
         "group": "sorted-set",
         "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements being returned. If M is constant (e.g. always asking for the first 10 elements with LIMIT), you can consider it O(log(N)).",
-        "deprecated_since": "6.2.0",
         "replaced_by": "`ZRANGE` with the `BYLEX` argument",
         "acl_categories": [
             "@read",
@@ -17237,17 +16243,9 @@
     },
     "ZRANGEBYSCORE": {
         "summary": "Returns members in a sorted set within a range of scores.",
-        "since": "1.0.5",
         "group": "sorted-set",
         "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements being returned. If M is constant (e.g. always asking for the first 10 elements with LIMIT), you can consider it O(log(N)).",
-        "deprecated_since": "6.2.0",
         "replaced_by": "`ZRANGE` with the `BYSCORE` argument",
-        "history": [
-            [
-                "2.0.0",
-                "Added the `WITHSCORES` modifier."
-            ]
-        ],
         "acl_categories": [
             "@read",
             "@sortedset",
@@ -17296,7 +16294,6 @@
                 "type": "pure-token",
                 "display_text": "withscores",
                 "token": "WITHSCORES",
-                "since": "2.0.0",
                 "optional": true
             },
             {
@@ -17327,7 +16324,6 @@
     },
     "ZRANGESTORE": {
         "summary": "Stores a range of members from sorted set in a key.",
-        "since": "6.2.0",
         "group": "sorted-set",
         "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements stored into the destination key.",
         "acl_categories": [
@@ -17449,15 +16445,8 @@
     },
     "ZRANK": {
         "summary": "Returns the index of a member in a sorted set ordered by ascending scores.",
-        "since": "2.0.0",
         "group": "sorted-set",
         "complexity": "O(log(N))",
-        "history": [
-            [
-                "7.2.0",
-                "Added the optional `WITHSCORE` argument."
-            ]
-        ],
         "acl_categories": [
             "@read",
             "@sortedset",
@@ -17511,15 +16500,8 @@
     },
     "ZREM": {
         "summary": "Removes one or more members from a sorted set. Deletes the sorted set if all members were removed.",
-        "since": "1.2.0",
         "group": "sorted-set",
         "complexity": "O(M*log(N)) with N being the number of elements in the sorted set and M the number of elements to be removed.",
-        "history": [
-            [
-                "2.4.0",
-                "Accepts multiple elements."
-            ]
-        ],
         "acl_categories": [
             "@write",
             "@sortedset",
@@ -17567,7 +16549,6 @@
     },
     "ZREMRANGEBYLEX": {
         "summary": "Removes members in a sorted set within a lexicographical range. Deletes the sorted set if all members were removed.",
-        "since": "2.8.9",
         "group": "sorted-set",
         "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements removed by the operation.",
         "acl_categories": [
@@ -17620,7 +16601,6 @@
     },
     "ZREMRANGEBYRANK": {
         "summary": "Removes members in a sorted set within a range of indexes. Deletes the sorted set if all members were removed.",
-        "since": "2.0.0",
         "group": "sorted-set",
         "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements removed by the operation.",
         "acl_categories": [
@@ -17673,7 +16653,6 @@
     },
     "ZREMRANGEBYSCORE": {
         "summary": "Removes members in a sorted set within a range of scores. Deletes the sorted set if all members were removed.",
-        "since": "1.2.0",
         "group": "sorted-set",
         "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements removed by the operation.",
         "acl_categories": [
@@ -17726,10 +16705,8 @@
     },
     "ZREVRANGE": {
         "summary": "Returns members in a sorted set within a range of indexes in reverse order.",
-        "since": "1.2.0",
         "group": "sorted-set",
         "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements returned.",
-        "deprecated_since": "6.2.0",
         "replaced_by": "`ZRANGE` with the `REV` argument",
         "acl_categories": [
             "@read",
@@ -17791,10 +16768,8 @@
     },
     "ZREVRANGEBYLEX": {
         "summary": "Returns members in a sorted set within a lexicographical range in reverse order.",
-        "since": "2.8.9",
         "group": "sorted-set",
         "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements being returned. If M is constant (e.g. always asking for the first 10 elements with LIMIT), you can consider it O(log(N)).",
-        "deprecated_since": "6.2.0",
         "replaced_by": "`ZRANGE` with the `REV` and `BYLEX` arguments",
         "acl_categories": [
             "@read",
@@ -17867,17 +16842,9 @@
     },
     "ZREVRANGEBYSCORE": {
         "summary": "Returns members in a sorted set within a range of scores in reverse order.",
-        "since": "2.2.0",
         "group": "sorted-set",
         "complexity": "O(log(N)+M) with N being the number of elements in the sorted set and M the number of elements being returned. If M is constant (e.g. always asking for the first 10 elements with LIMIT), you can consider it O(log(N)).",
-        "deprecated_since": "6.2.0",
         "replaced_by": "`ZRANGE` with the `REV` and `BYSCORE` arguments",
-        "history": [
-            [
-                "2.1.6",
-                "`min` and `max` can be exclusive."
-            ]
-        ],
         "acl_categories": [
             "@read",
             "@sortedset",
@@ -17956,15 +16923,8 @@
     },
     "ZREVRANK": {
         "summary": "Returns the index of a member in a sorted set ordered by descending scores.",
-        "since": "2.0.0",
         "group": "sorted-set",
         "complexity": "O(log(N))",
-        "history": [
-            [
-                "7.2.0",
-                "Added the optional `WITHSCORE` argument."
-            ]
-        ],
         "acl_categories": [
             "@read",
             "@sortedset",
@@ -18018,7 +16978,6 @@
     },
     "ZSCAN": {
         "summary": "Iterates over members and scores of a sorted set.",
-        "since": "2.8.0",
         "group": "sorted-set",
         "complexity": "O(1) for every call. O(N) for a complete iteration, including enough command calls for the cursor to return back to 0. N is the number of elements inside the collection.",
         "acl_categories": [
@@ -18083,7 +17042,6 @@
     },
     "ZSCORE": {
         "summary": "Returns the score of a member in a sorted set.",
-        "since": "1.2.0",
         "group": "sorted-set",
         "complexity": "O(1)",
         "acl_categories": [
@@ -18132,7 +17090,6 @@
     },
     "ZUNION": {
         "summary": "Returns the union of multiple sorted sets.",
-        "since": "6.2.0",
         "group": "sorted-set",
         "complexity": "O(N)+O(M*log(M)) with N being the sum of the sizes of the input sorted sets, and M being the number of elements in the resulting sorted set.",
         "acl_categories": [
@@ -18223,7 +17180,6 @@
     },
     "ZUNIONSTORE": {
         "summary": "Stores the union of multiple sorted sets in a key.",
-        "since": "2.0.0",
         "group": "sorted-set",
         "complexity": "O(N)+O(M log(M)) with N being the sum of the sizes of the input sorted sets, and M being the number of elements in the resulting sorted set.",
         "acl_categories": [

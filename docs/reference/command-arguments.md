@@ -79,10 +79,8 @@ Here's `XADD`'s arguments array:
     4) "pure-token"
     5) "token"
     6) "NOMKSTREAM"
-    7) "since"
-    8) "6.2"
-    9) "flags"
-   10) 1) optional
+    7) "flags"
+    8) 1) optional
 3) 1) "name"
    2) "trim"
    3) "type"
@@ -107,8 +105,6 @@ Here's `XADD`'s arguments array:
                4) "pure-token"
                5) "token"
                6) "MINID"
-               7) "since"
-               8) "6.2"
       2) 1) "name"
          2) "operator"
          3) "type"
@@ -140,12 +136,10 @@ Here's `XADD`'s arguments array:
           4) "integer"
           5) "token"
           6) "LIMIT"
-          7) "since"
-          8) "6.2"
-          9) "flags"
-         10) 1) optional
-         11) "value"
-         12) "count"
+          7) "flags"
+          8) 1) optional
+          9) "value"
+         10) "count"
 4) 1) "name"
    2) "id_or_auto"
    3) "type"

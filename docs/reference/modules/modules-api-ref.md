@@ -2994,8 +2994,7 @@ set to `REDISMODULE_HASH_NONE` if no special behavior is needed.
                               strings instead of RedisModuleString objects.
     REDISMODULE_HASH_COUNT_ALL: Include the number of inserted fields in the
                                 returned number, in addition to the number of
-                                updated and deleted fields. (Added in Redis
-                                6.2.)
+                                updated and deleted fields.
 
 Unless NX is specified, the command overwrites the old field value with
 the new one.

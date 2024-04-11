@@ -148,8 +148,7 @@ Normally a full resynchronization requires creating an RDB file on disk,
 then reloading the same RDB from disk to feed the replicas with the data.
 
 With slow disks this can be a very stressing operation for the master.
-Redis version 2.8.18 is the first version to have support for diskless
-replication. In this setup the child process directly sends the
+In this setup the child process directly sends the
 RDB over the wire to replicas, without using the disk as intermediate storage.
 
 ## Configuration
