@@ -1,4 +1,4 @@
 {
     "name": "finagle",
-    "description": "Redis client based on Finagle"
+    "description": "Valkey client based on Finagle"
 }

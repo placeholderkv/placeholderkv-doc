@@ -1,6 +1,6 @@
 {
     "name": "thunk-redis",
-    "description": "A thunk/promise-based redis client with pipelining and cluster.",
+    "description": "A thunk/promise-based valkey client with pipelining and cluster.",
     "twitter": [
         "izensh"
     ]

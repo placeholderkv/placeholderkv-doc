@@ -1,6 +1,6 @@
 {
-    "name": "Tideland Go Redis Client",
-    "description": "A flexible Go Redis client able to handle all commands",
+    "name": "Tideland Go Valkey Client",
+    "description": "A flexible Go Valkey client able to handle all commands",
     "homepage": "https://github.com/tideland/golib/tree/master/redis",
     "twitter": [
         "themue"

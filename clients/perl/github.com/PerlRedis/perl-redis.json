@@ -1,8 +1,8 @@
 {
-    "name": "Redis",
-    "description": "Perl binding for Redis database",
+    "name": "Valkey",
+    "description": "Perl binding for Valkey database",
     "recommended": true,
-    "homepage": "http://search.cpan.org/dist/Redis/",
+    "homepage": "http://search.cpan.org/dist/Valkey/",
     "twitter": [
         "damsieboy"
     ]

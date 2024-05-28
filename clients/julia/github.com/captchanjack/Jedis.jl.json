@@ -1,6 +1,6 @@
 {
     "name": "Jedis.jl",
-    "description": "A lightweight Redis client, implemented in Julia.",
+    "description": "A lightweight Valkey client, implemented in Julia.",
     "twitter": [
         "captchanjack"
     ]

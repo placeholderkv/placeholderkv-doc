@@ -1,6 +1,6 @@
 {
     "name": "redisclient",
-    "description": "Redis client for Nim",
+    "description": "Valkey client for Nim",
     "twitter": [
         "xmonader"
     ]

@@ -1,6 +1,6 @@
 {
     "name": "Yampee Redis",
-    "description": "A full-featured Redis client for PHP 5.2. Easy to use and to extend.",
+    "description": "A full-featured Valkey client for PHP 5.2. Easy to use and to extend.",
     "twitter": [
         "tgalopin"
     ]

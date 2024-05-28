@@ -1,6 +1,6 @@
 {
     "name": "Eredis",
-    "description": "Redis client with a focus on performance",
+    "description": "Valkey client with a focus on performance",
     "recommended": true,
     "twitter": [
         "wooga"

@@ -1,4 +1,4 @@
 {
   "name": "r2d2",
-  "description": "Fast, lightweight Redis client library for Deno."
+  "description": "Fast, lightweight Valkey client library for Deno."
 }

@@ -1,6 +1,6 @@
 {
-    "name": "Go-Redis",
-    "description": "Google Go Client and Connectors for Redis.",
+    "name": "Go-Valkey",
+    "description": "Google Go Client and Connectors for Valkey.",
     "twitter": [
         "SunOf27"
     ]

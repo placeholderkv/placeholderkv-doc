@@ -1,6 +1,6 @@
 {
     "name": "Redis_MTC",
-    "description": "A Xojo library to connect to a Redis server.",
+    "description": "A Xojo library to connect to a Valkey server.",
     "twitter": [
         "kemtekinay"
     ]

@@ -1,6 +1,6 @@
 {
     "name": "IRedis",
-    "description": "A redis client for Dart",
+    "description": "A valkey client for Dart",
     "twitter": [
         "ila"
     ]

@@ -1,6 +1,6 @@
 {
     "name": "exredis",
-    "description": "Redis client for Elixir.",
+    "description": "Valkey client for Elixir.",
     "twitter": [
         "artemeff"
     ]

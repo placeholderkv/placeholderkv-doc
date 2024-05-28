@@ -1,6 +1,6 @@
 {
     "name": "rust-redis",
-    "description": "A Rust client library for Redis.",
+    "description": "A Rust client library for Valkey.",
     "twitter": [
         "mneumann"
     ]

@@ -1,4 +1,4 @@
 {
     "name": "brukva",
-    "description": "Asynchronous Redis client that works within Tornado IO loop"
+    "description": "Asynchronous Valkey client that works within Tornado IO loop"
 }

@@ -1,6 +1,6 @@
 {
     "name": "Radish",
-    "description": "Simple and Fast Redis client written in and for Gleam",
+    "description": "Simple and Fast Valkey client written in and for Gleam",
     "homepage": "https://hexdocs.pm/radish",
     "twitter": [
         "massivefermion"

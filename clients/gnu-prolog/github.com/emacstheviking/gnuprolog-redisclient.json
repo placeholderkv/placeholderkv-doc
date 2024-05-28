@@ -1,6 +1,6 @@
 {
     "name": "gnuprolog-redisclient",
-    "description": "Simple Redis client for GNU Prolog in native Prolog, no FFI, libraries etc.",
+    "description": "Simple Valkey client for GNU Prolog in native Prolog, no FFI, libraries etc.",
     "twitter": [
         "seancharles"
     ]

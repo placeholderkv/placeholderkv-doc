@@ -1,6 +1,6 @@
 {
     "name": "Kreds",
-    "description": "A thread-safe, non-blocking, coroutine-based Redis client for Kotlin/JVM",
+    "description": "A thread-safe, non-blocking, coroutine-based Valkey client for Kotlin/JVM",
     "twitter": [
         "abhi_19t"
     ]

@@ -1,6 +1,6 @@
 {
     "name": "spark-redis",
-    "description": "A connector between Apache Spark and Redis.",
+    "description": "A connector between Apache Spark and Valkey.",
     "twitter": [
         "redislabs",
         "sunheehnus",

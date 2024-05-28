@@ -1,5 +1,5 @@
 {
     "name": "redicl",
-    "description": "A lean and mean redis client implementation that uses only the Scala standard library. Available for the JVM and native.",
+    "description": "A lean and mean valkey client implementation that uses only the Scala standard library. Available for the JVM and native.",
     "homepage": "https://github.com/jodersky/redicl"
 }

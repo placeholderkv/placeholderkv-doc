@@ -1,4 +1,4 @@
 {
     "name": "godis",
-    "description": "A Redis client for Go."
+    "description": "A Valkey client for Go."
 }

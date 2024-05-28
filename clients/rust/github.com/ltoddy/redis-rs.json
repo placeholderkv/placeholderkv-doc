@@ -1,6 +1,6 @@
 {
     "name": "redisclient",
-    "description": "Redis client for Rust.",
+    "description": "Valkey client for Rust.",
     "twitter": [
         "ltoddygen"
     ]

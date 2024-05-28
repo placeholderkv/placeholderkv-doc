@@ -1,7 +1,7 @@
 {
-    "name": "Mojo::Redis",
-    "description": "asynchronous Redis client for Mojolicious",
-    "homepage": "http://search.cpan.org/dist/Mojo-Redis/",
+    "name": "Mojo::Valkey",
+    "description": "asynchronous Valkey client for Mojolicious",
+    "homepage": "http://search.cpan.org/dist/Mojo-Valkey/",
     "twitter": [
         "und3f",
         "marcusramberg",

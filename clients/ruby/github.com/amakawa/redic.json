@@ -1,6 +1,6 @@
 {
     "name": "redic",
-    "description": "Lightweight Redis Client",
+    "description": "Lightweight Valkey Client",
     "twitter": [
         "soveran",
         "cyx"

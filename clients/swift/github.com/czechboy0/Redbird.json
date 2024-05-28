@@ -1,6 +1,6 @@
 {
     "name": "Redbird",
-    "description": "Pure-Swift implementation of a Redis client from the original protocol spec (OS X + Linux compatible)",
+    "description": "Pure-Swift implementation of a Valkey client from the original protocol spec (OS X + Linux compatible)",
     "twitter": [
         "czechboy0"
     ]

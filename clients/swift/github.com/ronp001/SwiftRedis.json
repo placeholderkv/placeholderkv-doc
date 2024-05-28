@@ -1,6 +1,6 @@
 {
     "name": "SwiftRedis",
-    "description": "Basic async client for Redis in Swift (iOS)",
+    "description": "Basic async client for Valkey in Swift (iOS)",
     "twitter": [
         "ronp001"
     ]

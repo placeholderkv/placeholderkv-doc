@@ -1,4 +1,4 @@
 {
     "name": "FlyRedis",
-    "description": "C++ Redis Client, base on Boost.asio, Easy To Use"
+    "description": "C++ Valkey Client, base on Boost.asio, Easy To Use"
 }

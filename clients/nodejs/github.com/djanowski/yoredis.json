@@ -1,6 +1,6 @@
 {
     "name": "yoredis",
-    "description": "A minimalistic Redis client using modern Node.js.",
+    "description": "A minimalistic Valkey client using modern Node.js.",
     "twitter": [
         "djanowski"
     ]

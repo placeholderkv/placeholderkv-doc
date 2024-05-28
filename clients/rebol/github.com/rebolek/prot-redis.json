@@ -1,6 +1,6 @@
 {
     "name": "prot-redis",
-    "description": "Redis network scheme for Rebol 3",
+    "description": "Valkey network scheme for Rebol 3",
     "twitter": [
         "rebolek"
     ]

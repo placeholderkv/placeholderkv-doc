@@ -1,6 +1,6 @@
 {
     "name": "monix-connect",
-    "description": "Monix integration with Redis",
+    "description": "Monix integration with Valkey",
     "homepage": "https://monix.github.io/monix-connect/docs/redis",
     "twitter": [
         "paualarco"

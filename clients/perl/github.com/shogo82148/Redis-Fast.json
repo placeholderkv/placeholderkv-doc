@@ -1,7 +1,7 @@
 {
-    "name": "Redis::Fast",
-    "description": "Perl binding for Redis database",
-    "homepage": "https://metacpan.org/pod/Redis::Fast",
+    "name": "Valkey::Fast",
+    "description": "Perl binding for Valkey database",
+    "homepage": "https://metacpan.org/pod/Valkey::Fast",
     "twitter": [
         "shogo82148"
     ]

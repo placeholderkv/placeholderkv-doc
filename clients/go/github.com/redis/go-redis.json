@@ -1,5 +1,5 @@
 {
     "name": "go-redis",
-    "description": "Redis client for Golang supporting Redis Sentinel and Redis Cluster out of the box.",
+    "description": "Valkey client for Golang supporting Valkey Sentinel and Valkey Cluster out of the box.",
     "official": true
 }

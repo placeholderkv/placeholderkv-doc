@@ -1,6 +1,6 @@
 {
     "name": "DartRedisClient",
-    "description": "A high-performance async/non-blocking Redis client for Dart",
+    "description": "A high-performance async/non-blocking Valkey client for Dart",
     "recommended": true,
     "twitter": [
         "demisbellot"

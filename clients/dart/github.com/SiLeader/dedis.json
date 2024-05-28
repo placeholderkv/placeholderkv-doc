@@ -1,6 +1,6 @@
 {
     "name": "dedis",
-    "description": "Simple Redis Client for Dart",
+    "description": "Simple Valkey Client for Dart",
     "homepage": "https://pub.dev/packages/dedis",
     "twitter": [
         "cerussite127"

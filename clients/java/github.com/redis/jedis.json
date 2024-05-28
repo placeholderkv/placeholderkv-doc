@@ -1,6 +1,6 @@
 {
     "name": "Jedis",
-    "description": "A blazingly small and sane Redis Java client",
+    "description": "A blazingly small and sane Valkey Java client",
     "official": true,
     "twitter": [
         "xetorthio",

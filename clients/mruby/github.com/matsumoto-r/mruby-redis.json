@@ -1,6 +1,6 @@
 {
     "name": "mruby-redis",
-    "description": "Redis class for mruby based on Hiredis",
+    "description": "Valkey class for mruby based on Hiredis",
     "twitter": [
         "matsumotory"
     ]

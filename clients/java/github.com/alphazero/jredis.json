@@ -1,6 +1,6 @@
 {
     "name": "JRedis",
-    "description": "A Redis client.",
+    "description": "A Valkey client.",
     "homepage": "https://code.google.com/p/jredis/",
     "twitter": [
         "SunOf27"

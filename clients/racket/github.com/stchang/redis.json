@@ -1,6 +1,6 @@
 {
     "name": "redis-racket",
-    "description": "A Redis client for Racket.",
+    "description": "A Valkey client for Racket.",
     "twitter": [
         "s_chng"
     ]

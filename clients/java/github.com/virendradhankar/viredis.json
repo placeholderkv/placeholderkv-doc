@@ -1,4 +1,4 @@
 {
     "name": "viredis",
-    "description": "A simple and small redis client for java."
+    "description": "A simple and small valkey client for java."
 }

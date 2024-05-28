@@ -1,6 +1,6 @@
 {
     "name": "vRedis",
-    "description": "Redis client using VB.NET.",
+    "description": "Valkey client using VB.NET.",
     "twitter": [
         "hishambinateya"
     ]

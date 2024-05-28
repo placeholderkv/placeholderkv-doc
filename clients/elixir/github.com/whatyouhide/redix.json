@@ -1,6 +1,6 @@
 {
     "name": "redix",
-    "description": "Superfast, pipelined, resilient Redis client written in pure Elixir.",
+    "description": "Superfast, pipelined, resilient Valkey client written in pure Elixir.",
     "twitter": [
         "whatyouhide"
     ]

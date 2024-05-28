@@ -1,5 +1,5 @@
 {
-    "name": "Redis::hiredis",
+    "name": "Valkey::hiredis",
     "description": "Perl binding for the hiredis C client",
     "twitter": [
         "neophenix"

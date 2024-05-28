@@ -1,6 +1,6 @@
 {
     "name": "then-redis",
-    "description": "A small, promise-based Redis client for node",
+    "description": "A small, promise-based Valkey client for node",
     "twitter": [
         "mjackson"
     ]

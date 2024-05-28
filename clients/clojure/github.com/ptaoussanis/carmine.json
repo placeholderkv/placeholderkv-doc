@@ -1,6 +1,6 @@
 {
     "name": "carmine",
-    "description": "Simple, high-performance Redis (2.0+) client for Clojure.",
+    "description": "Simple, high-performance Valkey (2.0+) client for Clojure.",
     "recommended": true,
     "twitter": [
         "ptaoussanis"

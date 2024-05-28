@@ -1,6 +1,6 @@
 {
     "name": "vertx-redis-client",
-    "description": "The Vert.x Redis client provides an asynchronous API to interact with a Redis data-structure server.",
+    "description": "The Vert.x Valkey client provides an asynchronous API to interact with a Valkey data-structure server.",
     "twitter": [
         "pmlopes"
     ]

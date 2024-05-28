@@ -1,6 +1,6 @@
 {
     "name": "aedis",
-    "description": "An async redis client designed for simplicity and reliability.",
+    "description": "An async valkey client designed for simplicity and reliability.",
     "twitter": [
         "mzimbres"
     ]

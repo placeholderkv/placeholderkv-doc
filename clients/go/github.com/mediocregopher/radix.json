@@ -1,6 +1,6 @@
 {
     "name": "Radix",
-    "description": "MIT licensed Redis client which supports pipelining, pooling, redis cluster, scripting, pub/sub, scanning, and more.",
+    "description": "MIT licensed Valkey client which supports pipelining, pooling, valkey cluster, scripting, pub/sub, scanning, and more.",
     "recommended": true,
     "twitter": [
         "fzzbt",

@@ -1,6 +1,6 @@
 {
     "name": "RcppRedis",
-    "description": "R interface to Redis using the hiredis library.",
+    "description": "R interface to Valkey using the hiredis library.",
     "homepage": "https://cran.rstudio.com/web/packages/RcppRedis/index.html",
     "twitter": [
         "eddelbuettel"

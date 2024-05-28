@@ -1,4 +1,4 @@
 {
     "name": "redis",
-    "description": "Redis client for Nim"
+    "description": "Valkey client for Nim"
 }

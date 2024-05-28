@@ -1,6 +1,6 @@
 {
     "name": "cpp_redis",
-    "description": "C++11 Lightweight Redis client: async, thread-safe, no dependency, pipelining, multi-platform.",
+    "description": "C++11 Lightweight Valkey client: async, thread-safe, no dependency, pipelining, multi-platform.",
     "twitter": [
         "simon_ninon"
     ]

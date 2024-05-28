@@ -1,4 +1,4 @@
 {
     "name": "lasso-redis",
-    "description": "High performance Redis client for Lasso, supports pub/sub and piping."
+    "description": "High performance Valkey client for Lasso, supports pub/sub and piping."
 }

@@ -1,6 +1,6 @@
 {
     "name": "txredis",
-    "description": "Python/Twisted client for Redis key-value store",
+    "description": "Python/Twisted client for Valkey key-value store",
     "twitter": [
         "dio_rian"
     ]

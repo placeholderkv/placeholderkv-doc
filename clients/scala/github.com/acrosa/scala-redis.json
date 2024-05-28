@@ -1,6 +1,6 @@
 {
     "name": "scala-redis",
-    "description": "A Redis client.",
+    "description": "A Valkey client.",
     "recommended": true,
     "twitter": [
         "alejandrocrosa"

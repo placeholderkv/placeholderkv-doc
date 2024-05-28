@@ -1,7 +1,7 @@
 {
-  "name": "Redis::Cluster::Fast",
-  "description": "A fast Perl binding for Redis Cluster",
-  "homepage": "http://search.cpan.org/dist/Redis-Cluster-Fast/",
+  "name": "Valkey::Cluster::Fast",
+  "description": "A fast Perl binding for Valkey Cluster",
+  "homepage": "http://search.cpan.org/dist/Valkey-Cluster-Fast/",
   "twitter": [
     "plainbanana"
   ]

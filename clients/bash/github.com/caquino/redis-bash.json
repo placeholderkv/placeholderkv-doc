@@ -1,6 +1,6 @@
 {
     "name": "redis-bash",
-    "description": "Bash library and example client to access Redis Databases",
+    "description": "Bash library and example client to access Valkey Databases",
     "twitter": [
         "syshero"
     ]

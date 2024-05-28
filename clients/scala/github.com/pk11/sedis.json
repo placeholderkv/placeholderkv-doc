@@ -1,4 +1,4 @@
 {
     "name": "sedis",
-    "description": "a thin scala wrapper for the popular Redis Java client, Jedis"
+    "description": "a thin scala wrapper for the popular Valkey Java client, Jedis"
 }

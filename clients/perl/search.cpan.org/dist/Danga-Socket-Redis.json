@@ -1,6 +1,6 @@
 {
-    "name": "Danga::Socket::Redis",
-    "description": "An asynchronous redis client using the Danga::Socket async library",
+    "name": "Danga::Socket::Valkey",
+    "description": "An asynchronous valkey client using the Danga::Socket async library",
     "twitter": [
         "martinredmond"
     ]

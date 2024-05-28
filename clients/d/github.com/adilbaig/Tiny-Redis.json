@@ -1,7 +1,7 @@
 {
-    "name": "Tiny Redis",
-    "description": "A Redis client for D2. Supports pipelining, transactions and Lua scripting",
-    "homepage": "http://adilbaig.github.io/Tiny-Redis/",
+    "name": "Tiny Valkey",
+    "description": "A Valkey client for D2. Supports pipelining, transactions and Lua scripting",
+    "homepage": "http://adilbaig.github.io/Tiny-Valkey/",
     "twitter": [
         "aidezigns"
     ]

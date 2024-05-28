@@ -1,6 +1,6 @@
 {
     "name": "scredis",
-    "description": "Non-blocking, ultra-fast Scala Redis client built on top of Akka IO, used in production at Livestream",
+    "description": "Non-blocking, ultra-fast Scala Valkey client built on top of Akka IO, used in production at Livestream",
     "twitter": [
         "livestream"
     ]

@@ -1,4 +1,4 @@
 {
     "name": "redis-cluster-client",
-    "description": "A simple client for Redis 6+ cluster"
+    "description": "A simple client for Valkey 6+ cluster"
 }

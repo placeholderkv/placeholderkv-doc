@@ -1,7 +1,7 @@
 {
-    "name": "AnyEvent::Redis",
-    "description": "Non-blocking Redis client",
-    "homepage": "http://search.cpan.org/dist/AnyEvent-Redis/",
+    "name": "AnyEvent::Valkey",
+    "description": "Non-blocking Valkey client",
+    "homepage": "http://search.cpan.org/dist/AnyEvent-Valkey/",
     "twitter": [
         "miyagawa"
     ]

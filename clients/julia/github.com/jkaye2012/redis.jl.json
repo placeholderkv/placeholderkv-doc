@@ -1,6 +1,6 @@
 {
-    "name": "Redis.jl",
-    "description": "A fully-featured Redis client for the Julia programming language",
+    "name": "Valkey.jl",
+    "description": "A fully-featured Valkey client for the Julia programming language",
     "twitter": [
         "jkaye2012"
     ]

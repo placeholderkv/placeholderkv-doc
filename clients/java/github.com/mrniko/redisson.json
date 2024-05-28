@@ -1,6 +1,6 @@
 {
     "name": "Redisson",
-    "description": "distributed and scalable Java data structures on top of Redis server",
+    "description": "distributed and scalable Java data structures on top of Valkey server",
     "recommended": true,
     "twitter": [
         "mrniko"

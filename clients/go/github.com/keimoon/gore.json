@@ -1,6 +1,6 @@
 {
     "name": "gore",
-    "description": "A full feature redis Client for Go. Supports Pipeline, Transaction, LUA scripting, Pubsub, Connection Pool, Sentinel and client sharding",
+    "description": "A full feature valkey Client for Go. Supports Pipeline, Transaction, LUA scripting, Pubsub, Connection Pool, Sentinel and client sharding",
     "twitter": [
         "keimoon"
     ]

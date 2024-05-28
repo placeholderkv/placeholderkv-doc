@@ -1,6 +1,6 @@
 {
     "name": "laserdisc",
-    "description": "Future free Fs2 native pure FP Redis client http://laserdisc.io",
+    "description": "Future free Fs2 native pure FP Valkey client http://laserdisc.io",
     "twitter": [
         "JSirocchi",
         "barambani"

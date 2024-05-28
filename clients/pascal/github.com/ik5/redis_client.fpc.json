@@ -1,6 +1,6 @@
 {
     "name": "redis_client.fpc",
-    "description": "Object Pascal client implementation for the redis protocol and commands",
+    "description": "Object Pascal client implementation for the valkey protocol and commands",
     "twitter": [
         "ik5"
     ]

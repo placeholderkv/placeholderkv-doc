@@ -1,6 +1,6 @@
 {
     "name": "redisca2",
-    "description": "Lightweight ORM for Redis",
+    "description": "Lightweight ORM for Valkey",
     "twitter": [
         "vitaliykhamin"
     ]

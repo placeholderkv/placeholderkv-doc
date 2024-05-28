@@ -1,7 +1,7 @@
 {
-    "name": "Redis::ClusterRider",
-    "description": "Daring Redis Cluster client",
-    "homepage": "http://search.cpan.org/dist/Redis-ClusterRider/",
+    "name": "Valkey::ClusterRider",
+    "description": "Daring Valkey Cluster client",
+    "homepage": "http://search.cpan.org/dist/Valkey-ClusterRider/",
     "twitter": [
         "iph0"
     ]

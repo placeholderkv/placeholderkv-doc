@@ -1,6 +1,6 @@
 {
     "name": "delphiredisclient",
-    "description": "Redis client for Delphi",
+    "description": "Valkey client for Delphi",
     "twitter": [
         "danieleteti"
     ]

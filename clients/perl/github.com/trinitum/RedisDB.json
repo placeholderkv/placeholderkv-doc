@@ -1,6 +1,6 @@
 {
     "name": "RedisDB",
-    "description": "Perl binding for Redis database with fast XS-based protocolparser",
+    "description": "Perl binding for Valkey database with fast XS-based protocolparser",
     "homepage": "http://search.cpan.org/dist/RedisDB/",
     "twitter": [
         "trinitum"

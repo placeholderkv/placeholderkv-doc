@@ -1,6 +1,6 @@
 {
     "name": "Puredis",
-    "description": "Pure Data Redis sync, async and subscriber client",
+    "description": "Pure Data Valkey sync, async and subscriber client",
     "twitter": [
         "loopole"
     ]

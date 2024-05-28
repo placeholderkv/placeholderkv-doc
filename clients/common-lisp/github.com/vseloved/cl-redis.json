@@ -1,6 +1,6 @@
 {
     "name": "CL-Redis",
-    "description": "A Redis client.",
+    "description": "A Valkey client.",
     "homepage": "http://www.cliki.net/cl-redis",
     "twitter": [
         "BigThingist"

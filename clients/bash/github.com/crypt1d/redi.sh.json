@@ -1,6 +1,6 @@
 {
     "name": "Redi.sh",
-    "description": "Simple, Bash-based, Redis client to store your script's variables",
+    "description": "Simple, Bash-based, Valkey client to store your script's variables",
     "twitter": [
         "nkrzalic"
     ]

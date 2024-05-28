@@ -1,6 +1,6 @@
 {
     "name": "hiredis-vip",
-    "description": "This was the original C client for Redis Cluster. Support for synchronous and asyncronous APIs, MSET/MGET/DEL, pipelining. Built around an outdated version of hiredis.",
+    "description": "This was the original C client for Valkey Cluster. Support for synchronous and asyncronous APIs, MSET/MGET/DEL, pipelining. Built around an outdated version of hiredis.",
     "twitter": [
         "diguo58"
     ]

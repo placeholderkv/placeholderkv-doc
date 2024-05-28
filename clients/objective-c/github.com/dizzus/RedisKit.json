@@ -1,6 +1,6 @@
 {
     "name": "RedisKit",
-    "description": "RedisKit is a asynchronious client framework for Redis server, written in Objective-C",
+    "description": "RedisKit is a asynchronious client framework for Valkey server, written in Objective-C",
     "twitter": [
         "dizzus"
     ]

@@ -1,6 +1,6 @@
 {
     "name": "lredis",
-    "description": "Redis library for Lua",
+    "description": "Valkey library for Lua",
     "twitter": [
         "daurnimator"
     ]

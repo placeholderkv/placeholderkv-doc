@@ -1,6 +1,6 @@
 {
     "name": "guile-redis",
-    "description": "A Redis client for Guile",
+    "description": "A Valkey client for Guile",
     "twitter": [
         "aconchillo"
     ]

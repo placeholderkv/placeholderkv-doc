@@ -1,6 +1,6 @@
 {
     "name": "redis-octave",
-    "description": "A Redis client in pure Octave",
+    "description": "A Valkey client in pure Octave",
     "twitter": [
         "markuman"
     ]

@@ -1,6 +1,6 @@
 {
     "name": "SimpleRedisClient",
-    "description": "Simple Redis client for C++",
+    "description": "Simple Valkey client for C++",
     "twitter": [
         "Levhav"
     ]

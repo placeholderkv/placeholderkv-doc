@@ -1,6 +1,6 @@
 {
     "name": "PHP Redis implementation / wrapper",
-    "description": "Simple and lightweight redis implementation. Basically wrapper for raw redis commands.",
+    "description": "Simple and lightweight valkey implementation. Basically wrapper for raw valkey commands.",
     "homepage": "https://github.com/ziogas/PHP-Redis-implementation",
     "twitter": [
         "arminas"

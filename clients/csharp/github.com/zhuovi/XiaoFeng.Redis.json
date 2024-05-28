@@ -1,4 +1,4 @@
 {
     "name": "XiaoFeng.Redis",
-    "description": "A useful Redis client that supports the .NET FRAMEWORK,.NET CORE,.NET STANDARD. A client tool that is quite convenient to operate."
+    "description": "A useful Valkey client that supports the .NET FRAMEWORK,.NET CORE,.NET STANDARD. A client tool that is quite convenient to operate."
 }

@@ -1,6 +1,6 @@
 {
     "name": "xredis",
-    "description": "Redis client with redis ACL features",
+    "description": "Valkey client with valkey ACL features",
     "twitter": [
         "razaellahi531"
     ]

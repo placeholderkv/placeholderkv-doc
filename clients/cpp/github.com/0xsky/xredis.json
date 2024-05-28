@@ -1,6 +1,6 @@
 {
     "name": "xredis",
-    "description": "Redis C++ client with data slice storage, Redis cluster, connection pool, master replica connection, read/write separation; requires hiredis only",
+    "description": "Valkey C++ client with data slice storage, Valkey cluster, connection pool, master replica connection, read/write separation; requires hiredis only",
     "homepage": "http://xredis.0xsky.com/",
     "twitter": [
         "0xsky"

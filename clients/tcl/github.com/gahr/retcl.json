@@ -1,6 +1,6 @@
 {
     "name": "Retcl",
-    "description": "Retcl is an asynchronous, event-driven Redis client library implemented as a single-file Tcl module.",
+    "description": "Retcl is an asynchronous, event-driven Valkey client library implemented as a single-file Tcl module.",
     "twitter": [
         "gahrgahr"
     ]

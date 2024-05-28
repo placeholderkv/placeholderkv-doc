@@ -1,6 +1,6 @@
 {
     "name": "AnyEvent::RipeRedis::Cluster",
-    "description": "Non-blocking Redis Cluster client",
+    "description": "Non-blocking Valkey Cluster client",
     "homepage": "http://search.cpan.org/dist/AnyEvent-RipeRedis-Cluster/",
     "twitter": [
         "iph0"

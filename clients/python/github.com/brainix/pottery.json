@@ -1,6 +1,6 @@
 {
     "name": "Pottery",
-    "description": "High level Pythonic dict, set, and list like containers around Redis data types (Python 3 only)",
+    "description": "High level Pythonic dict, set, and list like containers around Valkey data types (Python 3 only)",
     "twitter": [
         "brainix"
     ]

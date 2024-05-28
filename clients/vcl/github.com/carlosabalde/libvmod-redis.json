@@ -1,6 +1,6 @@
 {
     "name": "libvmod-redis",
-    "description": "Varnish Cache module using the synchronous hiredis library API to access Redis servers from VCL.",
+    "description": "Varnish Cache module using the synchronous hiredis library API to access Valkey servers from VCL.",
     "twitter": [
         "carlosabalde"
     ]

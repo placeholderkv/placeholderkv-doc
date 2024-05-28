@@ -1,6 +1,6 @@
 {
     "name": "eredis",
-    "description": "Fast and light Redis C client library extending Hiredis: thread-safe, write replication, auto-reconnect, sync pool, async libev",
+    "description": "Fast and light Valkey C client library extending Hiredis: thread-safe, write replication, auto-reconnect, sync pool, async libev",
     "twitter": [
         "EulerianTech"
     ]

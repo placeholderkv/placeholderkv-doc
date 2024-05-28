@@ -1,4 +1,4 @@
 {
     "name": "godis",
-    "description": "redis client implement by golang, inspired by jedis."
+    "description": "valkey client implement by golang, inspired by jedis."
 }
