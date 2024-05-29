@@ -79,11 +79,15 @@ The only libraries that Valkey ships with and that you can use in scripts are li
 
 While the sandbox prevents users from declaring globals, the execution context is pre-populated with several of these.
 
-### The _redis_ singleton
+### The _server_ singleton
 
-The _redis_ singleton is an object instance that's accessible from all scripts.
+The _server_ singleton is an object instance that's accessible from all scripts.
 It provides the API to interact with Valkey from scripts.
-Its description follows [below](#redis_object).
+Its description follows [below](#server_object).
+
+**Note:**
+For compatibility with Redis, Valkey also exposes a _redis_ top level object, that exposes the exact same set of APIs as the _server_ object.
+Valkey does not intend to drop compatibility for this _redis_ API, but it is recommended to use the _server_ object for newly developed scripts.
 
 ### <a name="the-keys-global-variable"></a>The _KEYS_ global variable
 
@@ -108,15 +112,15 @@ It is pre-populated with all key name input arguments.
 The _ARGV_ global variable is available only in [ephemeral scripts](eval-intro.md).
 It is pre-populated with all regular input arguments.
 
-## <a name="redis_object"></a>_redis_ object
+## <a name="server_object"></a>_server_ object
 
 * Since version: 2.6.0
 * Available in scripts: yes
 * Available in functions: yes
 
-The Valkey Lua execution context always provides a singleton instance of an object named _redis_.
-The _redis_ instance enables the script to interact with the Valkey server that's running it.
-Following is the API provided by the _redis_ object instance.
+The Valkey Lua execution context always provides a singleton instance of an object named _server_.
+The _server_ instance enables the script to interact with the Valkey server that's running it.
+Following is the API provided by the _server_ object instance.
 
 ### <a name="server.call"></a> `server.call(command [,arg...])`
 
@@ -163,7 +167,7 @@ The following demonstrates how to use `server.pcall()` to intercept and handle r
 local reply = server.pcall('ECHO', unpack(ARGV))
 if reply['err'] ~= nil then
   -- Handle the error sometime, but for now just log it
-  server.log(redis.LOG_WARNING, reply['err'])
+  server.log(server.LOG_WARNING, reply['err'])
   reply['err'] = 'ERR Something is wrong, but no worries, everything is under control'
 end
 return reply
@@ -266,10 +270,10 @@ It expects two input arguments: the log level and a message.
 The message is a string to write to the log file.
 Log level can be on of these:
 
-* `redis.LOG_DEBUG`
-* `redis.LOG_VERBOSE`
-* `redis.LOG_NOTICE`
-* `redis.LOG_WARNING`
+* `server.LOG_DEBUG`
+* `server.LOG_VERBOSE`
+* `server.LOG_NOTICE`
+* `server.LOG_WARNING`
 
 These levels map to the server's log levels.
 The log only records messages equal or greater in level than the server's `loglevel` configuration directive.
@@ -277,7 +281,7 @@ The log only records messages equal or greater in level than the server's `logle
 The following snippet:
 
 ```lua
-server.log(redis.LOG_WARNING, 'Something is terribly wrong')
+server.log(server.LOG_WARNING, 'Something is terribly wrong')
 ```
 
 will produce a line similar to the following in your server's log:
@@ -292,7 +296,7 @@ will produce a line similar to the following in your server's log:
 * Available in scripts: yes
 * Available in functions: yes
 
-This function allows the executing script to switch between [Valkey Serialization Protocol (RESP)](protocol.md) versions for the replies returned by [`server.call()`](#server.call) and [`server.pcall()`](#server.pcall).
+This function allows the executing script to switch between [Redis Serialization Protocol (RESP)](protocol.md) versions for the replies returned by [`server.call()`](#server.call) and [`server.pcall()`](#server.pcall).
 It expects a single numerical argument as the protocol's version.
 The default protocol version is _2_, but it can be switched to version _3_.
 
@@ -337,13 +341,13 @@ Replicating the `SUNIONSTORE` command and the `DEL`ition of the temporary key is
 The `server.set_repl()` function instructs the server how to treat subsequent write commands in terms of replication.
 It accepts a single input argument that only be one of the following:
 
-* `redis.REPL_ALL`: replicates the effects to the AOF and replicas.
-* `redis.REPL_AOF`: replicates the effects to the AOF alone.
-* `redis.REPL_REPLICA`: replicates the effects to the replicas alone.
-* `redis.REPL_SLAVE`: same as `REPL_REPLICA`, maintained for backward compatibility.
-* `redis.REPL_NONE`: disables effect replication entirely.
+* `server.REPL_ALL`: replicates the effects to the AOF and replicas.
+* `server.REPL_AOF`: replicates the effects to the AOF alone.
+* `server.REPL_REPLICA`: replicates the effects to the replicas alone.
+* `server.REPL_SLAVE`: same as `REPL_REPLICA`, maintained for backward compatibility.
+* `server.REPL_NONE`: disables effect replication entirely.
 
-By default, the scripting engine is initialized to the `redis.REPL_ALL` setting when a script begins its execution.
+By default, the scripting engine is initialized to the `server.REPL_ALL` setting when a script begins its execution.
 You can call the `server.set_repl()` function at any time during the script's execution to switch between the different replication modes.
 
 A simple example follows:
@@ -351,9 +355,9 @@ A simple example follows:
 ```lua
 server.replicate_commands() -- Enable effects replication in versions lower than Redis OSS v7.0
 server.call('SET', KEYS[1], ARGV[1])
-server.set_repl(redis.REPL_NONE)
+server.set_repl(server.REPL_NONE)
 server.call('SET', KEYS[2], ARGV[2])
-server.set_repl(redis.REPL_ALL)
+server.set_repl(server.REPL_ALL)
 server.call('SET', KEYS[3], ARGV[3])
 ```
 
@@ -502,9 +506,8 @@ You can use the following flags and instruct the server to treat the scripts' ex
 
 Please refer to [Function Flags](functions-intro.md#function-flags) and [Eval Flags](eval-intro.md#eval-flags) for a detailed example.
 
-### <a name="redis.redis_version"></a> `redis.REDIS_VERSION`
+### <a name="server.server_version"></a> `server.SERVER_VERISON`
 
-* Since version: 7.0.0
 * Available in scripts: yes
 * Available in functions: yes
 
@@ -515,13 +518,36 @@ The reply's format is `MM.mm.PP`, where:
 * **mm:** is the minor version.
 * **PP:** is the patch level.
 
-### <a name="redis.redis_version_num"></a> `redis.REDIS_VERSION_NUM`
+### <a name="server.redis_version"></a> `server.REDIS_VERSION`
 
-* Since version: 7.0.0
+* Available in scripts: yes
+* Available in functions: yes
+
+Returns the current Redis compatibility version as a Lua string.
+The reply's format is `MM.mm.PP`, where:
+
+* **MM:** is the major version.
+* **mm:** is the minor version.
+* **PP:** is the patch level.
+
+### <a name="server.redis_version_num"></a> `server.SERVER_VERSION_NUM`
+
 * Available in scripts: yes
 * Available in functions: yes
 
 Returns the current Valkey server version as a number.
+The reply is a hexadecimal value structured as `0x00MMmmPP`, where:
+
+* **MM:** is the major version.
+* **mm:** is the minor version.
+* **PP:** is the patch level.
+
+### <a name="server.redis_version_num"></a> `server.REDIS_VERSION_NUM`
+
+* Available in scripts: yes
+* Available in functions: yes
+
+Returns the current Redis compatibility version as a number.
 The reply is a hexadecimal value structured as `0x00MMmmPP`, where:
 
 * **MM:** is the major version.
@@ -539,7 +565,7 @@ that reply is automatically converted to Valkey' protocol.
 Put differently; there's a one-to-one mapping between Valkey' replies and Lua's data types and a one-to-one mapping between Lua's data types and the [Valkey Protocol](protocol.md) data types.
 The underlying design is such that if a Valkey type is converted into a Lua type and converted back into a Valkey type, the result is the same as the initial value.
 
-Type conversion from Valkey protocol replies (i.e., the replies from `server.call()` and `server.pcall()`) to Lua data types depends on the Valkey Serialization Protocol version used by the script.
+Type conversion from Valkey protocol replies (i.e., the replies from `server.call()` and `server.pcall()`) to Lua data types depends on the Redis Serialization Protocol version used by the script.
 The default protocol version during script executions is RESP2.
 The script may switch the replies' protocol versions by calling the `server.setresp()` function.
 
@@ -617,7 +643,7 @@ As you can see, the float value of _3.333_ gets converted to an integer _3_, the
 
 ### RESP3 to Lua type conversion
 
-[RESP3](https://github.com/redis/redis-specifications/blob/master/protocol/RESP3.md) is a newer version of the [Valkey Serialization Protocol](protocol.md).
+[RESP3](https://github.com/redis/redis-specifications/blob/master/protocol/RESP3.md) is a newer version of the [Redis Serialization Protocol](protocol.md).
 It is available as an opt-in choice as of Redis OSS v6.0.
 
 An executing script may call the [`server.setresp`](#server.setresp) function during its execution and switch the protocol version that's used for returning replies from Valkey' commands (that can be invoked via [`server.call()`](#server.call) or [`server.pcall()`](#server.pcall)).
