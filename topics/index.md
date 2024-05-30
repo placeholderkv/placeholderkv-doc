@@ -50,6 +50,7 @@ Administration
 * [Persistence](persistence.md): Options for configuring durability using disk backups.
 * [Administration](admin.md): Various administration topics.
 * [Security](security.md): An overview of Valkey's security.
+* [RDMA](RDMA.md): An overview of RDMA support.
 * [Access Control Lists](acl.md): ACLs make it possible to allow users to run only selected commands and access only specific key patterns.
 * [Encryption](encryption.md): How to use TLS for communication.
 * [Signals Handling](signals.md): How Valkey handles signals.

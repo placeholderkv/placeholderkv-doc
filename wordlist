@@ -157,6 +157,8 @@ ctx
 daemonize
 daemonized
 daemontools
+Datacenter
+datacenter
 dataset
 datastore
 dbid
@@ -346,6 +348,7 @@ incr
 incrby
 incrby_get_mget
 indexable
+Infiniband
 ing
 init
 int_vals
@@ -891,6 +894,7 @@ v[0-9\.]+
 Valkey's
 Valkey[A-Z].*
 Valkey.
+valkey-server's
 value-ptr
 ValueN
 Variadic
@@ -915,6 +919,8 @@ wherefrom
 whitespace
 whitespaces
 whos-using-redis
+WQE
+WQEs
 WSL2
 xack
 xadd
