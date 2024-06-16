@@ -222,6 +222,9 @@ These are:
 * `SCRIPT LOAD script`: this command registers the specified script in the Valkey script cache. 
   It is a useful command in all the contexts where we want to ensure that `EVALSHA` doesn't not fail (for instance, in a pipeline or when called from a [`MULTI`/`EXEC` transaction](transactions.md)), without the need to execute the script.
 
+* `SCRIPT DUMP sha1`: this command dump server-side script in the script cache.
+  It is useful to help users easily obtain scripts using signature.
+
 * `SCRIPT KILL`: this command is the only way to interrupt a long-running script (a.k.a slow script), short of shutting down the server.
   A script is deemed as slow once its execution's duration exceeds the configured [maximum execution time](programmability.md#maximum-execution-time) threshold.
   The `SCRIPT KILL` command can be used only with scripts that did not modify the dataset during their execution (since stopping a read-only script does not violate the scripting engine's guaranteed atomicity).
