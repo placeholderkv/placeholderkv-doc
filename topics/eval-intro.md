@@ -1,14 +1,13 @@
 ---
-title: "Scripting with Lua"
-linkTitle: "Lua scripting"
+title: Scripting with Lua
+linkTitle: Lua scripting
 weight: 2
-description: >
-   Executing Lua in Valkey
+description: |
+  Executing Lua in Valkey
 aliases:
-    - /topics/eval-intro
-    - /docs/manual/programmability/eval-intro/
+  - /topics/eval-intro
+  - /docs/manual/programmability/eval-intro/
 ---
-
 Valkey lets users upload and execute Lua scripts on the server.
 Scripts can employ programmatic control structures and use most of the [commands](../commands/) while executing to access the database.
 Because scripts execute in the server, reading and writing data from scripts is very efficient.
@@ -97,7 +96,6 @@ The _KEYS_ table is pre-populated with all key name arguments provided to the sc
 
 The following attempts to demonstrate the distribution of input arguments between the scripts _KEYS_ and _ARGV_ runtime global variables:
 
-
 ```
 127.0.0.1:6379> EVAL "return { KEYS[1], KEYS[2], ARGV[1], ARGV[2], ARGV[3] }" 2 key1 key2 arg1 arg2 arg3
 1) "key1"
@@ -127,6 +125,7 @@ For example, consider the following:
 > EVAL "return server.call('SET', KEYS[1], ARGV[1])" 1 foo bar
 OK
 ```
+
 The above script accepts one key name and one value as its input arguments.
 When executed, the script calls the `SET` command to set the input key, _foo_, with the string value "bar".
 
@@ -192,7 +191,7 @@ Therefore, a client library's implementation should revert to using plain `EVAL`
 
 During normal operation, an application's scripts are meant to stay indefinitely in the cache (that is, until the server is restarted or the cache being flushed).
 The underlying reasoning is that the script cache contents of a well-written application are unlikely to grow continuously.
-Even large applications that use hundreds of cached scripts shouldn't be an issue in terms of cache memory usage. 
+Even large applications that use hundreds of cached scripts shouldn't be an issue in terms of cache memory usage.
 
 The only way to flush the script cache is by explicitly calling the `SCRIPT FLUSH` command.
 Running the command will _completely flush_ the scripts cache, removing all the scripts executed so far.
@@ -219,10 +218,10 @@ These are:
 * `SCRIPT EXISTS`: given one or more SHA1 digests as arguments, this command returns an array of _1_'s and _0_'s.
   _1_ means the specific SHA1 is recognized as a script already present in the scripting cache. _0_'s meaning is that a script with this SHA1 wasn't loaded before (or at least never since the latest call to `SCRIPT FLUSH`).
 
-* `SCRIPT LOAD script`: this command registers the specified script in the Valkey script cache. 
+* `SCRIPT LOAD script`: this command registers the specified script in the Valkey script cache.
   It is a useful command in all the contexts where we want to ensure that `EVALSHA` doesn't not fail (for instance, in a pipeline or when called from a [`MULTI`/`EXEC` transaction](transactions.md)), without the need to execute the script.
 
-* `SCRIPT DUMP sha1`: this command dump server-side script in the script cache.
+* `SCRIPT SHOW sha1`: this command show server-side script in the script cache.
   It is useful to help users easily obtain scripts using signature.
 
 * `SCRIPT KILL`: this command is the only way to interrupt a long-running script (a.k.a slow script), short of shutting down the server.
@@ -285,7 +284,7 @@ The [`server.replicate_commands()`](lua-api.md#server.replicate_commands) functi
 otherwise, if the function was called after the script already called a write command,
 it returns _false_, and normal whole script replication is used.
 
-This function is deprecated as of Redis OSS 7.0, and while you can still call it, it will always succeed. 
+This function is deprecated as of Redis OSS 7.0, and while you can still call it, it will always succeed.
 
 ### Scripts with deterministic writes
 
@@ -307,7 +306,7 @@ So starting with Redis OSS 3.2, the scripting engine is able to, alternatively, 
 In this section, we'll assume that scripts are replicated verbatim by sending the whole script.
 Let's call this replication mode **verbatim scripts replication**.
 
-The main drawback with the *whole scripts replication* approach is that scripts are required to have the following property:
+The main drawback with the _whole scripts replication_ approach is that scripts are required to have the following property:
 the script **always must** execute the same Valkey _write_ commands with the same arguments given the same input data set.
 Operations performed by the script can't depend on any hidden (non-explicit) information or state that may change as the script execution proceeds or between different executions of the script.
 Nor can it depend on any external input from I/O devices.
@@ -442,3 +441,4 @@ it still has a different set of defaults compared to a script without a `#!` lin
 Another difference is that scripts without `#!` can run commands that access keys belonging to different cluster hash slots, but ones with `#!` inherit the default flags, so they cannot.
 
 Please refer to [Script flags](lua-api.md#script_flags) to learn about the various scripts and the defaults.
+
